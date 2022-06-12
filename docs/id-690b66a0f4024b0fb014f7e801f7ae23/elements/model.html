@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>MomCare</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-3.3.2.min.css">
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-theme-3.3.2.min.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>MomCare</b>
+
+            <!-- If a View with Viewpoint -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+                       <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-purpose"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#query" aria-controls="query" role="tab" data-toggle="tab" class="i18n-query"></a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="convertlinks documentation" style="white-space:pre-wrap"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="query">
+						<br>
+						<style>
+						#myprompt {
+						    width: 80%;
+						    font-family: Consolas,Monaco, monospace;
+						}
+						</style>
+
+						<div id='myconsole'></div>
+
+						<p>
+							<tt><span id="useid">alasql</span> &gt;</tt> <input id='myprompt' autofocus/> 
+						</p>
+
+						<script src='../../lib/alasql/alasql.min.js'></script>
+
+						<script>
+							function decodeURL(s) {
+								return decodeURIComponent(s.replace(/\+/g, "%20"));
+							}
+
+							var first = decodeURI(location.search.substr(1));
+						 	alasql.options.logtarget = 'myconsole';
+							alasql.prompt('myprompt','useid');
+							alasql.prompt('myprompt','useid', first);
+
+							var dataElements = [ ];	  
+						  	var dataProperties = [ ];
+						 	var dataRelationships = [ ];
+						 	var dataViews = [ ];
+						 	var dataViewsContent = [ ];
+						 	var dataFolders = [ ];
+						 	var dataFoldersContent = [ ];
+
+							dataFolders.push({id:"id-690b66a0f4024b0fb014f7e801f7ae23", type:"ArchimateModel", name:decodeURL("MomCare"), documentation:decodeURL("")});
+								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-e29802ecce5f4972be10021099686fce", contenttype:"Folder"});
+								dataFolders.push({id:"id-e29802ecce5f4972be10021099686fce", type:"Folder", name:decodeURL("Strategy"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-3a50f47451d441a8abcbcb5770a04d49", contenttype:"Folder"});
+								dataFolders.push({id:"id-3a50f47451d441a8abcbcb5770a04d49", type:"Folder", name:decodeURL("Business"), documentation:decodeURL("")});
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-565baebc42304b20975d8540864f41ea", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-565baebc42304b20975d8540864f41ea", type:"BusinessObject", name:decodeURL("Patient"), documentation:decodeURL("")});
+													dataProperties.push({conceptid:"id-565baebc42304b20975d8540864f41ea", propkey:decodeURL("FHIR"), propvalue:decodeURL("https%3A%2F%2Fwww.hl7.org%2Ffhir%2Fpatient.html")});
+
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-648edbb56b7a4d60a67acddd5dcba9de", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-648edbb56b7a4d60a67acddd5dcba9de", type:"BusinessObject", name:decodeURL("Encounter"), documentation:decodeURL("An+interaction+between+a+patient+and+healthcare+provider%28s%29+for+the+purpose+of+providing+healthcare+service%28s%29+or+assessing+the+health+status+of+a+patient.%0A%0AAlso+known+as%3A+consultation.")});
+													dataProperties.push({conceptid:"id-648edbb56b7a4d60a67acddd5dcba9de", propkey:decodeURL("FHIR"), propvalue:decodeURL("https%3A%2F%2Fwww.hl7.org%2Ffhir%2Fencounter.html")});
+
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-2d7911e054c44be7b61125946f716c82", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-2d7911e054c44be7b61125946f716c82", type:"BusinessObject", name:decodeURL("Procedure"), documentation:decodeURL("An+action+that+is+or+was+performed+on+or+for+a+patient.+This+can+be+a+physical+intervention+like+an+operation%2C+or+less+invasive+like+long+term+services%2C+counseling%2C+or+hypnotherapy.")});
+													dataProperties.push({conceptid:"id-2d7911e054c44be7b61125946f716c82", propkey:decodeURL("FHIR"), propvalue:decodeURL("https%3A%2F%2Fwww.hl7.org%2Ffhir%2Fprocedure.html")});
+
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-2f511a08defa4b229348b58b26c3c24b", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-2f511a08defa4b229348b58b26c3c24b", type:"BusinessObject", name:decodeURL("Observation"), documentation:decodeURL("Measurements+and+simple+assertions+made+about+a+patient%2C+device+or+other+subject.")});
+													dataProperties.push({conceptid:"id-2f511a08defa4b229348b58b26c3c24b", propkey:decodeURL("FHIR"), propvalue:decodeURL("https%3A%2F%2Fwww.hl7.org%2Ffhir%2Fobservation.html")});
+
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-a25435903f4c4c28acc8be2cd451ae46", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-a25435903f4c4c28acc8be2cd451ae46", type:"BusinessObject", name:decodeURL("Medication"), documentation:decodeURL("This+resource+is+primarily+used+for+the+identification+and+definition+of+a+medication+for+the+purposes+of+prescribing%2C+dispensing%2C+and+administering+a+medication+as+well+as+for+making+statements+about+medication+use.")});
+													dataProperties.push({conceptid:"id-a25435903f4c4c28acc8be2cd451ae46", propkey:decodeURL("FHIR"), propvalue:decodeURL("https%3A%2F%2Fwww.hl7.org%2Ffhir%2Fmedication.html")});
+
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-33914b38ef3146829c7b7542bfb58f20", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-33914b38ef3146829c7b7542bfb58f20", type:"BusinessObject", name:decodeURL("MedicationDispense"), documentation:decodeURL("Indicates+that+a+medication+product+is+to+be+or+has+been+dispensed+for+a+named+person%2Fpatient.+This+includes+a+description+of+the+medication+product+%28supply%29+provided+and+the+instructions+for+administering+the+medication.+The+medication+dispense+is+the+result+of+a+pharmacy+system+responding+to+a+medication+order.")});
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-598f32f7932e4abaa35f1d846ec70b32", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-598f32f7932e4abaa35f1d846ec70b32", type:"BusinessObject", name:decodeURL("MedicationRequest"), documentation:decodeURL("")});
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-e7098f5a915e47cead7285e279a6ab38", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-e7098f5a915e47cead7285e279a6ab38", type:"BusinessObject", name:decodeURL("Questionnaire"), documentation:decodeURL("A+structured+set+of+questions+intended+to+guide+the+collection+of+answers+from+end-users.+Questionnaires+provide+detailed+control+over+order%2C+presentation%2C+phraseology+and+grouping+to+allow+coherent%2C+consistent+data+collection.")});
+													dataProperties.push({conceptid:"id-e7098f5a915e47cead7285e279a6ab38", propkey:decodeURL("FHIR"), propvalue:decodeURL("https%3A%2F%2Fwww.hl7.org%2Ffhir%2Fquestionnaire.html")});
+
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-6fd7e669c68a43359e53183eda3ee839", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-6fd7e669c68a43359e53183eda3ee839", type:"BusinessObject", name:decodeURL("QuestionnaireResponse"), documentation:decodeURL("A+structured+set+of+questions+and+their+answers.+The+questions+are+ordered+and+grouped+into+coherent+subsets%2C+corresponding+to+the+structure+of+the+grouping+of+the+questionnaire+being+responded+to.")});
+													dataProperties.push({conceptid:"id-6fd7e669c68a43359e53183eda3ee839", propkey:decodeURL("FHIR"), propvalue:decodeURL("https%3A%2F%2Fwww.hl7.org%2Ffhir%2Fquestionnaireresponse.html")});
+
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-2f77c15b509b4d6b91dabb3bd4bef6e6", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-2f77c15b509b4d6b91dabb3bd4bef6e6", type:"BusinessObject", name:decodeURL("Condition"), documentation:decodeURL("A+clinical+condition%2C+problem%2C+diagnosis%2C+or+other+event%2C+situation%2C+issue%2C+or+clinical+concept+that+has+risen+to+a+level+of+concern.")});
+													dataProperties.push({conceptid:"id-2f77c15b509b4d6b91dabb3bd4bef6e6", propkey:decodeURL("FHIR"), propvalue:decodeURL("https%3A%2F%2Fwww.hl7.org%2Ffhir%2Fcondition.html")});
+
+
+								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-ee605c71b8294cf090cf9a85a3419f5f", contenttype:"Folder"});
+								dataFolders.push({id:"id-ee605c71b8294cf090cf9a85a3419f5f", type:"Folder", name:decodeURL("Application"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-7a80257f116e4c72b45248525c268bc9", contenttype:"Folder"});
+								dataFolders.push({id:"id-7a80257f116e4c72b45248525c268bc9", type:"Folder", name:decodeURL("Technology+%26+Physical"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-b69999bf1ddc4534b305b69e703edb6d", contenttype:"Folder"});
+								dataFolders.push({id:"id-b69999bf1ddc4534b305b69e703edb6d", type:"Folder", name:decodeURL("Motivation"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-712626af517942539726b803b35ea4d4", contenttype:"Folder"});
+								dataFolders.push({id:"id-712626af517942539726b803b35ea4d4", type:"Folder", name:decodeURL("Implementation+%26+Migration"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-18bde492a0194eb9a436b9a96e829285", contenttype:"Folder"});
+								dataFolders.push({id:"id-18bde492a0194eb9a436b9a96e829285", type:"Folder", name:decodeURL("Other"), documentation:decodeURL("")});
+
+								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-8dd70376c36446d1885f3298c24983eb", contenttype:"Folder"});
+								dataFolders.push({id:"id-8dd70376c36446d1885f3298c24983eb", type:"Folder", name:decodeURL("Relations"), documentation:decodeURL("")});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-d1987f3caefc4fe1b5bd15ee303553cd", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-d1987f3caefc4fe1b5bd15ee303553cd", type:"AssociationRelationship", name:decodeURL("has+one+or+more"), documentation:decodeURL(""), sourceid:"id-565baebc42304b20975d8540864f41ea", targetid:"id-648edbb56b7a4d60a67acddd5dcba9de"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-73c3139dff394f89a63b6b1dde6e1f71", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-73c3139dff394f89a63b6b1dde6e1f71", type:"AssociationRelationship", name:decodeURL("has+zero+or+more"), documentation:decodeURL("During+an+Encounter+at+the+clinic%2C+procedures+may+be+performed+on+the+patient.+Procedures+can+only+have+occured+if+there+was+an+Encounter.%0A"), sourceid:"id-648edbb56b7a4d60a67acddd5dcba9de", targetid:"id-2d7911e054c44be7b61125946f716c82"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-419a566341fa4433a0f93cfa6315b0f6", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-419a566341fa4433a0f93cfa6315b0f6", type:"AssociationRelationship", name:decodeURL("has+zero+or+more"), documentation:decodeURL("The+healthcare+event+%28e.g.+a+patient+and+healthcare+provider+interaction%29+during+which+this+observation+is+made."), sourceid:"id-648edbb56b7a4d60a67acddd5dcba9de", targetid:"id-2f511a08defa4b229348b58b26c3c24b"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-fff56358a3f44957847e9f452366b643", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-fff56358a3f44957847e9f452366b643", type:"AssociationRelationship", name:decodeURL("has+zero+or+more"), documentation:decodeURL(""), sourceid:"id-648edbb56b7a4d60a67acddd5dcba9de", targetid:"id-598f32f7932e4abaa35f1d846ec70b32"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-49c69140f11f41d1bf080472fe3068f0", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-49c69140f11f41d1bf080472fe3068f0", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-598f32f7932e4abaa35f1d846ec70b32", targetid:"id-33914b38ef3146829c7b7542bfb58f20"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-5306c19b514147999994fc258febacab", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-5306c19b514147999994fc258febacab", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-598f32f7932e4abaa35f1d846ec70b32", targetid:"id-a25435903f4c4c28acc8be2cd451ae46"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-d3eb82d7720c4a70bcd449e05c5f6acb", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-d3eb82d7720c4a70bcd449e05c5f6acb", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-33914b38ef3146829c7b7542bfb58f20", targetid:"id-a25435903f4c4c28acc8be2cd451ae46"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-d0f04c976f6341dbbc4c18549a52c608", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-d0f04c976f6341dbbc4c18549a52c608", type:"AssociationRelationship", name:decodeURL("has+zero+or+more"), documentation:decodeURL(""), sourceid:"id-648edbb56b7a4d60a67acddd5dcba9de", targetid:"id-6fd7e669c68a43359e53183eda3ee839"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-10672eae34b04b8f9f5782fbdf317561", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-10672eae34b04b8f9f5782fbdf317561", type:"AssociationRelationship", name:decodeURL("has+one"), documentation:decodeURL(""), sourceid:"id-6fd7e669c68a43359e53183eda3ee839", targetid:"id-e7098f5a915e47cead7285e279a6ab38"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-adcc8b83a15448c5a08204053cfc9419", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-adcc8b83a15448c5a08204053cfc9419", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-565baebc42304b20975d8540864f41ea", targetid:"id-2f77c15b509b4d6b91dabb3bd4bef6e6"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-06edf1c345c04f2d834514a2a8af96ca", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-06edf1c345c04f2d834514a2a8af96ca", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-2f77c15b509b4d6b91dabb3bd4bef6e6", targetid:"id-648edbb56b7a4d60a67acddd5dcba9de"});
+
+								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-8f8b54a5ea8445a1996c48efa7af5b50", contenttype:"Folder"});
+								dataFolders.push({id:"id-8f8b54a5ea8445a1996c48efa7af5b50", type:"Folder", name:decodeURL("Views"), documentation:decodeURL("")});
+									dataFoldersContent.push({folderid:"id-8f8b54a5ea8445a1996c48efa7af5b50", contentid:"id-31092f1339da4108a52df9ad5f90e146", contenttype:"ArchimateDiagramModel"});
+										dataViews.push({id:"id-31092f1339da4108a52df9ad5f90e146", type:"ArchimateDiagramModel", name:decodeURL("Conceptual+data+model"), documentation:decodeURL("The+conceptual+model+of+MomCare+is+based+on+FHIR+Resources+v4.3.0.+Our+aim+is+to+implement+a+detailed+FHIR+profile+which+can+be+used+in+all+African+countries.+An+example+of+such+a+profile+is+the+Dutch+BirthCare+1.0+profile%2C+see+https%3A%2F%2Finformatiestandaarden.nictiz.nl%2Fwiki%2FGebz%3AV1.0_FHIR_IG.%0A%0Aversion%3A+0.1%0Alast+modified+date%3A+12+June+2022%0A%0A")});
+													dataProperties.push({conceptid:"id-31092f1339da4108a52df9ad5f90e146", propkey:decodeURL("BirthCare+1.0"), propvalue:decodeURL("https%3A%2F%2Finformatiestandaarden.nictiz.nl%2Fwiki%2FGebz%3AV1.0_FHIR_IG")});
+
+														dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-598f32f7932e4abaa35f1d846ec70b32", contenttype:"BusinessObject"});
+														dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-33914b38ef3146829c7b7542bfb58f20", contenttype:"BusinessObject"});
+														dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-a25435903f4c4c28acc8be2cd451ae46", contenttype:"BusinessObject"});
+												
+												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-565baebc42304b20975d8540864f41ea", contenttype:"BusinessObject"});
+												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-648edbb56b7a4d60a67acddd5dcba9de", contenttype:"BusinessObject"});
+												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-2d7911e054c44be7b61125946f716c82", contenttype:"BusinessObject"});
+												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-2f511a08defa4b229348b58b26c3c24b", contenttype:"BusinessObject"});
+												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-e7098f5a915e47cead7285e279a6ab38", contenttype:"BusinessObject"});
+												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-6fd7e669c68a43359e53183eda3ee839", contenttype:"BusinessObject"});
+												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-2f77c15b509b4d6b91dabb3bd4bef6e6", contenttype:"BusinessObject"});
+
+																				dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-49c69140f11f41d1bf080472fe3068f0", contenttype:"AssociationRelationship"});
+																				dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-5306c19b514147999994fc258febacab", contenttype:"AssociationRelationship"});
+
+																				dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-d3eb82d7720c4a70bcd449e05c5f6acb", contenttype:"AssociationRelationship"});
+
+												
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-d1987f3caefc4fe1b5bd15ee303553cd", contenttype:"AssociationRelationship"});
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-adcc8b83a15448c5a08204053cfc9419", contenttype:"AssociationRelationship"});
+
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-73c3139dff394f89a63b6b1dde6e1f71", contenttype:"AssociationRelationship"});
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-419a566341fa4433a0f93cfa6315b0f6", contenttype:"AssociationRelationship"});
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-fff56358a3f44957847e9f452366b643", contenttype:"AssociationRelationship"});
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-d0f04c976f6341dbbc4c18549a52c608", contenttype:"AssociationRelationship"});
+
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-10672eae34b04b8f9f5782fbdf317561", contenttype:"AssociationRelationship"});
+
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-06edf1c345c04f2d834514a2a8af96ca", contenttype:"AssociationRelationship"});
+
+
+
+
+
+
+						    alasql('CREATE TABLE Elements');
+						    alasql('CREATE TABLE Properties');
+						    alasql('CREATE TABLE Relationships');
+						    alasql('CREATE TABLE Views');
+						    alasql('CREATE TABLE ViewsContent');
+						    alasql('CREATE TABLE Folders');
+						    alasql('CREATE TABLE FoldersContent');
+
+						    alasql.tables.Elements.data = dataElements;
+						    alasql.tables.Properties.data = dataProperties;
+						    alasql.tables.Relationships.data = dataRelationships;
+						    alasql.tables.Views.data = dataViews;
+						    alasql.tables.ViewsContent.data = dataViewsContent;
+						    alasql.tables.Folders.data = dataFolders;
+						    alasql.tables.FoldersContent.data = dataFoldersContent;
+						</script> 
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

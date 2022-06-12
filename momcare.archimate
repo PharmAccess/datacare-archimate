@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="MomCare" id="id-690b66a0f4024b0fb014f7e801f7ae23" version="4.6.0">
+  <folder name="Strategy" id="id-e29802ecce5f4972be10021099686fce" type="strategy"/>
+  <folder name="Business" id="id-3a50f47451d441a8abcbcb5770a04d49" type="business">
+    <element xsi:type="archimate:BusinessObject" name="Patient" id="id-565baebc42304b20975d8540864f41ea">
+      <property key="FHIR" value="https://www.hl7.org/fhir/patient.html"/>
+    </element>
+    <element xsi:type="archimate:BusinessObject" name="Encounter" id="id-648edbb56b7a4d60a67acddd5dcba9de">
+      <documentation>An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.</documentation>
+      <property key="FHIR" value="https://www.hl7.org/fhir/encounter.html"/>
+    </element>
+  </folder>
+  <folder name="Application" id="id-ee605c71b8294cf090cf9a85a3419f5f" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-7a80257f116e4c72b45248525c268bc9" type="technology"/>
+  <folder name="Motivation" id="id-b69999bf1ddc4534b305b69e703edb6d" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-712626af517942539726b803b35ea4d4" type="implementation_migration"/>
+  <folder name="Other" id="id-18bde492a0194eb9a436b9a96e829285" type="other"/>
+  <folder name="Relations" id="id-8dd70376c36446d1885f3298c24983eb" type="relations">
+    <element xsi:type="archimate:AssociationRelationship" name="has one or more" id="id-d1987f3caefc4fe1b5bd15ee303553cd" source="id-565baebc42304b20975d8540864f41ea" target="id-648edbb56b7a4d60a67acddd5dcba9de" directed="true"/>
+  </folder>
+  <folder name="Views" id="id-8f8b54a5ea8445a1996c48efa7af5b50" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Conceptual data model" id="id-31092f1339da4108a52df9ad5f90e146" viewpoint="information_structure">
+      <child xsi:type="archimate:DiagramObject" id="id-eecd68ce224b4debacde56cd327502f5" archimateElement="id-565baebc42304b20975d8540864f41ea">
+        <bounds x="243" y="157" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-cc633bc7c8354dd9b661080afd1f36c2" source="id-eecd68ce224b4debacde56cd327502f5" target="id-54bcee5615124676a752acdcbf385d28" archimateRelationship="id-d1987f3caefc4fe1b5bd15ee303553cd"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-54bcee5615124676a752acdcbf385d28" targetConnections="id-cc633bc7c8354dd9b661080afd1f36c2" archimateElement="id-648edbb56b7a4d60a67acddd5dcba9de">
+        <bounds x="453" y="335" width="120" height="55"/>
+      </child>
+      <documentation>The conceptual model of MomCare is based on FHIR Resources v4.3.0.
+
+version: 					0.1
+last modified date: 12 June 2022</documentation>
+    </element>
+  </folder>
+</archimate:model>
