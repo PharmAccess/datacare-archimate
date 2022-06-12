@@ -136,6 +136,18 @@
 										dataElements.push({id:"id-2f77c15b509b4d6b91dabb3bd4bef6e6", type:"BusinessObject", name:decodeURL("Condition"), documentation:decodeURL("A+clinical+condition%2C+problem%2C+diagnosis%2C+or+other+event%2C+situation%2C+issue%2C+or+clinical+concept+that+has+risen+to+a+level+of+concern.")});
 													dataProperties.push({conceptid:"id-2f77c15b509b4d6b91dabb3bd4bef6e6", propkey:decodeURL("FHIR"), propvalue:decodeURL("https%3A%2F%2Fwww.hl7.org%2Ffhir%2Fcondition.html")});
 
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-3018745ebc8f478cb736a46aee303002", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-3018745ebc8f478cb736a46aee303002", type:"BusinessObject", name:decodeURL("EpisodeOfCare"), documentation:decodeURL("An+association+between+a+patient+and+an+organization+%2F+healthcare+provider%28s%29+during+which+time+encounters+may+occur.+The+managing+organization+assumes+a+level+of+responsibility+for+the+patient+during+this+time.")});
+													dataProperties.push({conceptid:"id-3018745ebc8f478cb736a46aee303002", propkey:decodeURL("FHIR"), propvalue:decodeURL("https%3A%2F%2Fwww.hl7.org%2Ffhir%2Fepisodeofcare.html")});
+
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-c3860e8a35284667a1a920c73d34f566", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-c3860e8a35284667a1a920c73d34f566", type:"BusinessObject", name:decodeURL("Practitioner"), documentation:decodeURL("A+person+who+is+directly+or+indirectly+involved+in+the+provisioning+of+healthcare.")});
+													dataProperties.push({conceptid:"id-c3860e8a35284667a1a920c73d34f566", propkey:decodeURL("FHIR"), propvalue:decodeURL("https%3A%2F%2Fwww.hl7.org%2Ffhir%2Fpractitioner.html")});
+
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-61670b97b2ac4c65992b94ce2816edf0", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-61670b97b2ac4c65992b94ce2816edf0", type:"BusinessObject", name:decodeURL("Organization"), documentation:decodeURL("")});
+									dataFoldersContent.push({folderid:"id-3a50f47451d441a8abcbcb5770a04d49", contentid:"id-48ea2cd215d14ca6ae32b42082162f8f", contenttype:"BusinessObject"});
+										dataElements.push({id:"id-48ea2cd215d14ca6ae32b42082162f8f", type:"BusinessObject", name:decodeURL("PractitionerRole"), documentation:decodeURL("")});
 
 								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-ee605c71b8294cf090cf9a85a3419f5f", contenttype:"Folder"});
 								dataFolders.push({id:"id-ee605c71b8294cf090cf9a85a3419f5f", type:"Folder", name:decodeURL("Application"), documentation:decodeURL("")});
@@ -154,8 +166,6 @@
 
 								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-8dd70376c36446d1885f3298c24983eb", contenttype:"Folder"});
 								dataFolders.push({id:"id-8dd70376c36446d1885f3298c24983eb", type:"Folder", name:decodeURL("Relations"), documentation:decodeURL("")});
-									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-d1987f3caefc4fe1b5bd15ee303553cd", contenttype:"AssociationRelationship"});
-										dataRelationships.push({id:"id-d1987f3caefc4fe1b5bd15ee303553cd", type:"AssociationRelationship", name:decodeURL("has+one+or+more"), documentation:decodeURL(""), sourceid:"id-565baebc42304b20975d8540864f41ea", targetid:"id-648edbb56b7a4d60a67acddd5dcba9de"});
 									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-73c3139dff394f89a63b6b1dde6e1f71", contenttype:"AssociationRelationship"});
 										dataRelationships.push({id:"id-73c3139dff394f89a63b6b1dde6e1f71", type:"AssociationRelationship", name:decodeURL("has+zero+or+more"), documentation:decodeURL("During+an+Encounter+at+the+clinic%2C+procedures+may+be+performed+on+the+patient.+Procedures+can+only+have+occured+if+there+was+an+Encounter.%0A"), sourceid:"id-648edbb56b7a4d60a67acddd5dcba9de", targetid:"id-2d7911e054c44be7b61125946f716c82"});
 									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-419a566341fa4433a0f93cfa6315b0f6", contenttype:"AssociationRelationship"});
@@ -174,13 +184,25 @@
 										dataRelationships.push({id:"id-10672eae34b04b8f9f5782fbdf317561", type:"AssociationRelationship", name:decodeURL("has+one"), documentation:decodeURL(""), sourceid:"id-6fd7e669c68a43359e53183eda3ee839", targetid:"id-e7098f5a915e47cead7285e279a6ab38"});
 									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-adcc8b83a15448c5a08204053cfc9419", contenttype:"AssociationRelationship"});
 										dataRelationships.push({id:"id-adcc8b83a15448c5a08204053cfc9419", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-565baebc42304b20975d8540864f41ea", targetid:"id-2f77c15b509b4d6b91dabb3bd4bef6e6"});
-									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-06edf1c345c04f2d834514a2a8af96ca", contenttype:"AssociationRelationship"});
-										dataRelationships.push({id:"id-06edf1c345c04f2d834514a2a8af96ca", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-2f77c15b509b4d6b91dabb3bd4bef6e6", targetid:"id-648edbb56b7a4d60a67acddd5dcba9de"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-2e95426387cc4475a99c1b8c73fec978", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-2e95426387cc4475a99c1b8c73fec978", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-c3860e8a35284667a1a920c73d34f566", targetid:"id-3018745ebc8f478cb736a46aee303002"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-99e72a9b609d4cda973778e1fbfba1f2", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-99e72a9b609d4cda973778e1fbfba1f2", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-61670b97b2ac4c65992b94ce2816edf0", targetid:"id-3018745ebc8f478cb736a46aee303002"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-ac8c701bf8ca4d95a8e551f735e95270", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-ac8c701bf8ca4d95a8e551f735e95270", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-565baebc42304b20975d8540864f41ea", targetid:"id-3018745ebc8f478cb736a46aee303002"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-6c89b46041854797b42a4d38ad32556d", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-6c89b46041854797b42a4d38ad32556d", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-48ea2cd215d14ca6ae32b42082162f8f", targetid:"id-c3860e8a35284667a1a920c73d34f566"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-be5e48d8425040f3bb5c4e60beec00c2", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-be5e48d8425040f3bb5c4e60beec00c2", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-48ea2cd215d14ca6ae32b42082162f8f", targetid:"id-61670b97b2ac4c65992b94ce2816edf0"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-5f4fd9df1df34b15a351499ad104a2ab", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-5f4fd9df1df34b15a351499ad104a2ab", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-3018745ebc8f478cb736a46aee303002", targetid:"id-648edbb56b7a4d60a67acddd5dcba9de"});
+									dataFoldersContent.push({folderid:"id-8dd70376c36446d1885f3298c24983eb", contentid:"id-2c78a03e6a4d43db800ede361cb5a600", contenttype:"AssociationRelationship"});
+										dataRelationships.push({id:"id-2c78a03e6a4d43db800ede361cb5a600", type:"AssociationRelationship", name:decodeURL(""), documentation:decodeURL(""), sourceid:"id-2f77c15b509b4d6b91dabb3bd4bef6e6", targetid:"id-3018745ebc8f478cb736a46aee303002"});
 
 								dataFoldersContent.push({folderid:"id-690b66a0f4024b0fb014f7e801f7ae23", contentid:"id-8f8b54a5ea8445a1996c48efa7af5b50", contenttype:"Folder"});
 								dataFolders.push({id:"id-8f8b54a5ea8445a1996c48efa7af5b50", type:"Folder", name:decodeURL("Views"), documentation:decodeURL("")});
 									dataFoldersContent.push({folderid:"id-8f8b54a5ea8445a1996c48efa7af5b50", contentid:"id-31092f1339da4108a52df9ad5f90e146", contenttype:"ArchimateDiagramModel"});
-										dataViews.push({id:"id-31092f1339da4108a52df9ad5f90e146", type:"ArchimateDiagramModel", name:decodeURL("Conceptual+data+model"), documentation:decodeURL("The+conceptual+model+of+MomCare+is+based+on+FHIR+Resources+v4.3.0.+Our+aim+is+to+implement+a+detailed+FHIR+profile+which+can+be+used+in+all+African+countries.+An+example+of+such+a+profile+is+the+Dutch+BirthCare+1.0+profile%2C+see+https%3A%2F%2Finformatiestandaarden.nictiz.nl%2Fwiki%2FGebz%3AV1.0_FHIR_IG.%0A%0Aversion%3A+0.1%0Alast+modified+date%3A+12+June+2022%0A%0A")});
+										dataViews.push({id:"id-31092f1339da4108a52df9ad5f90e146", type:"ArchimateDiagramModel", name:decodeURL("Conceptual+data+model"), documentation:decodeURL("The+conceptual+model+of+MomCare+is+based+on+FHIR+Resources+v4.3.0.+Our+aim+is+to+implement+a+detailed+FHIR+profile+which+can+be+used+in+all+African+countries.+An+example+of+such+a+profile+is+the+Dutch+BirthCare+1.0+profile%2C+see+https%3A%2F%2Finformatiestandaarden.nictiz.nl%2Fwiki%2FGebz%3AV1.2_FHIR_IG+%0A%0Aversion%3A+0.1%0Alast+modified+date%3A+12+June+2022%0A%0A")});
 													dataProperties.push({conceptid:"id-31092f1339da4108a52df9ad5f90e146", propkey:decodeURL("BirthCare+1.0"), propvalue:decodeURL("https%3A%2F%2Finformatiestandaarden.nictiz.nl%2Fwiki%2FGebz%3AV1.0_FHIR_IG")});
 
 														dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-598f32f7932e4abaa35f1d846ec70b32", contenttype:"BusinessObject"});
@@ -194,6 +216,10 @@
 												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-e7098f5a915e47cead7285e279a6ab38", contenttype:"BusinessObject"});
 												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-6fd7e669c68a43359e53183eda3ee839", contenttype:"BusinessObject"});
 												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-2f77c15b509b4d6b91dabb3bd4bef6e6", contenttype:"BusinessObject"});
+												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-3018745ebc8f478cb736a46aee303002", contenttype:"BusinessObject"});
+												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-c3860e8a35284667a1a920c73d34f566", contenttype:"BusinessObject"});
+												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-61670b97b2ac4c65992b94ce2816edf0", contenttype:"BusinessObject"});
+												dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-48ea2cd215d14ca6ae32b42082162f8f", contenttype:"BusinessObject"});
 
 																				dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-49c69140f11f41d1bf080472fe3068f0", contenttype:"AssociationRelationship"});
 																				dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-5306c19b514147999994fc258febacab", contenttype:"AssociationRelationship"});
@@ -201,8 +227,8 @@
 																				dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-d3eb82d7720c4a70bcd449e05c5f6acb", contenttype:"AssociationRelationship"});
 
 												
-																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-d1987f3caefc4fe1b5bd15ee303553cd", contenttype:"AssociationRelationship"});
 																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-adcc8b83a15448c5a08204053cfc9419", contenttype:"AssociationRelationship"});
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-ac8c701bf8ca4d95a8e551f735e95270", contenttype:"AssociationRelationship"});
 
 																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-73c3139dff394f89a63b6b1dde6e1f71", contenttype:"AssociationRelationship"});
 																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-419a566341fa4433a0f93cfa6315b0f6", contenttype:"AssociationRelationship"});
@@ -211,7 +237,16 @@
 
 																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-10672eae34b04b8f9f5782fbdf317561", contenttype:"AssociationRelationship"});
 
-																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-06edf1c345c04f2d834514a2a8af96ca", contenttype:"AssociationRelationship"});
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-2c78a03e6a4d43db800ede361cb5a600", contenttype:"AssociationRelationship"});
+
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-5f4fd9df1df34b15a351499ad104a2ab", contenttype:"AssociationRelationship"});
+
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-2e95426387cc4475a99c1b8c73fec978", contenttype:"AssociationRelationship"});
+
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-99e72a9b609d4cda973778e1fbfba1f2", contenttype:"AssociationRelationship"});
+
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-6c89b46041854797b42a4d38ad32556d", contenttype:"AssociationRelationship"});
+																		dataViewsContent.push({viewid:"id-31092f1339da4108a52df9ad5f90e146", contentid:"id-be5e48d8425040f3bb5c4e60beec00c2", contenttype:"AssociationRelationship"});
 
 
 

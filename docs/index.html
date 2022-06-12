@@ -65,6 +65,10 @@
 													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-e7098f5a915e47cead7285e279a6ab38.html" target="element"> Questionnaire </a></li>
 													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-6fd7e669c68a43359e53183eda3ee839.html" target="element"> QuestionnaireResponse </a></li>
 													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-2f77c15b509b4d6b91dabb3bd4bef6e6.html" target="element"> Condition </a></li>
+													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-3018745ebc8f478cb736a46aee303002.html" target="element"> EpisodeOfCare </a></li>
+													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-c3860e8a35284667a1a920c73d34f566.html" target="element"> Practitioner </a></li>
+													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-61670b97b2ac4c65992b94ce2816edf0.html" target="element"> Organization </a></li>
+													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-48ea2cd215d14ca6ae32b42082162f8f.html" target="element"> PractitionerRole </a></li>
 
 									</ul>
 								</li>
@@ -90,10 +94,6 @@
 								</li>
 								<li><span class="i18n-relations"><i class="glyphicon glyphicon-triangle-right"></i> </span>
 									<ul>
-													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-d1987f3caefc4fe1b5bd15ee303553cd.html" target="element">
-															has one or more
-														(Patient - Encounter) 
-													</a></li>
 													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-73c3139dff394f89a63b6b1dde6e1f71.html" target="element">
 															has zero or more
 														(Encounter - Procedure) 
@@ -130,9 +130,33 @@
 															<span class="i18n-elementtype-AssociationRelationship"></span>
 														(Patient - Condition) 
 													</a></li>
-													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-06edf1c345c04f2d834514a2a8af96ca.html" target="element">
+													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-2e95426387cc4475a99c1b8c73fec978.html" target="element">
 															<span class="i18n-elementtype-AssociationRelationship"></span>
-														(Condition - Encounter) 
+														(Practitioner - EpisodeOfCare) 
+													</a></li>
+													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-99e72a9b609d4cda973778e1fbfba1f2.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(Organization - EpisodeOfCare) 
+													</a></li>
+													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-ac8c701bf8ca4d95a8e551f735e95270.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(Patient - EpisodeOfCare) 
+													</a></li>
+													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-6c89b46041854797b42a4d38ad32556d.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(PractitionerRole - Practitioner) 
+													</a></li>
+													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-be5e48d8425040f3bb5c4e60beec00c2.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(PractitionerRole - Organization) 
+													</a></li>
+													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-5f4fd9df1df34b15a351499ad104a2ab.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(EpisodeOfCare - Encounter) 
+													</a></li>
+													<li class="tree-element"><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-2c78a03e6a4d43db800ede361cb5a600.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(Condition - EpisodeOfCare) 
 													</a></li>
 
 									</ul>
