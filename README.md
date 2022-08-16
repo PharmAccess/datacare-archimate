@@ -1,5 +1,5 @@
-# momcare-archimate
-ArchiMate model of MomCare project
+# datacare-archimate
+ArchiMate model of DataCare project
 
 
 ## How to contribute
