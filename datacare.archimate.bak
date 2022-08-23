@@ -83,6 +83,8 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
     <element xsi:type="archimate:ApplicationComponent" name="CoT 1.0 app" id="id-6e407cecbf81456c837841410495c921"/>
     <element xsi:type="archimate:ApplicationComponent" name="local mysql db" id="id-7f047fd718f742a8a4200052956c37f7"/>
     <element xsi:type="archimate:ApplicationComponent" name="CoT 1.0 MySQL" id="id-4467a9d37fc04f3e889b7d9ae2ba7fb1"/>
+    <element xsi:type="archimate:ApplicationComponent" name="CoT 1.0 app (copy)" id="id-2d206a2382e04dd99476d3b920e58e8f"/>
+    <element xsi:type="archimate:ApplicationComponent" name="local mysql db (copy)" id="id-a33c3144aae446c7a4a2deb0ad052950"/>
     <element xsi:type="archimate:ApplicationComponent" name="HAPI FHIR Server" id="id-6a41955501534d14bd11f3cc10368775"/>
     <element xsi:type="archimate:ApplicationComponent" name="PostgreSQL" id="id-78474a3abd6b4303b6de19c88ba96029"/>
     <element xsi:type="archimate:ApplicationComponent" name="MitreID Connect" id="id-1a2484831fa74ca99f09a0a3a4c10aa3"/>
@@ -133,6 +135,9 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
     <element xsi:type="archimate:RealizationRelationship" id="id-55859a25efd34d29b84f97e262ca5ef6" source="id-2d840145f23c492ca4c12069c0972139" target="id-6e407cecbf81456c837841410495c921"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-77ad14f504b14065918416816a6f3683" source="id-2d840145f23c492ca4c12069c0972139" target="id-7f047fd718f742a8a4200052956c37f7"/>
     <element xsi:type="archimate:ServingRelationship" id="id-aba1a1888bbe4577b103c8b15c0b80f5" source="id-7f047fd718f742a8a4200052956c37f7" target="id-6e407cecbf81456c837841410495c921"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-3ccfd7586e904fedafab69f25cd9c3ae" source="id-a33c3144aae446c7a4a2deb0ad052950" target="id-2d206a2382e04dd99476d3b920e58e8f"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-275d4e6931b7411aba51eee36f1480df" source="id-0587552cde5549f4b2a785e5c28a61c3" target="id-2d206a2382e04dd99476d3b920e58e8f"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-5b8ec58ca9a640a194dab97576fdbf97" source="id-0587552cde5549f4b2a785e5c28a61c3" target="id-a33c3144aae446c7a4a2deb0ad052950"/>
     <element xsi:type="archimate:AssociationRelationship" name="sync" id="id-893d2788449a4a8e8b60604815fce6bf" source="id-7f047fd718f742a8a4200052956c37f7" target="id-4467a9d37fc04f3e889b7d9ae2ba7fb1"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-f899cbfc68494a92be40332e9bdcfe93" source="id-39e78746146e4498b7593747c7ebeb82" target="id-6a41955501534d14bd11f3cc10368775"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-59195bff666240cab72b605ddeccffc3" source="id-39e78746146e4498b7593747c7ebeb82" target="id-78474a3abd6b4303b6de19c88ba96029"/>
@@ -322,10 +327,12 @@ https://cordova.apache.org/</documentation>
       <documentation>We use HAPI FHIR server as-is with FHIR R4
 https://hapifhir.io/hapi-fhir/docs/
 
-Derby or PostgreSQL as FHIR database
-https://hapifhir.io/hapi-fhir/docs/server_jpa/architecture.html
+PostgreSQL as FHIR database
 
-Data from CoT MySQL database is transformed with Python CLI transformer is specifically developed for this demonstrator. </documentation>
+
+We need to investigate/design how to use PouchDB for Android
+https://pouchdb.com/faq.html
+https://cordova.apache.org/</documentation>
     </element>
   </folder>
 </archimate:model>
