@@ -84,7 +84,7 @@
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-7f047fd718f742a8a4200052956c37f7.html" target="element"> local mysql db </a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-4467a9d37fc04f3e889b7d9ae2ba7fb1.html" target="element"> CoT 1.0 MySQL </a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-6a41955501534d14bd11f3cc10368775.html" target="element"> HAPI FHIR Server </a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-78474a3abd6b4303b6de19c88ba96029.html" target="element"> PostgreSQL </a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-78474a3abd6b4303b6de19c88ba96029.html" target="element"> Derby or PostgreSQL </a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-1a2484831fa74ca99f09a0a3a4c10aa3.html" target="element"> MitreID Connect </a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-6e8ab145de734540a18395072fee6e54.html" target="element"> cot-transform </a></li>
 
@@ -118,10 +118,6 @@
 															has zero or more
 														(Encounter - Procedure) 
 													</a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-419a566341fa4433a0f93cfa6315b0f6.html" target="element">
-															has zero or more
-														(Encounter - Observation) 
-													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-fff56358a3f44957847e9f452366b643.html" target="element">
 															has zero or more
 														(Encounter - MedicationRequest) 
@@ -146,10 +142,6 @@
 															has one
 														(QuestionnaireResponse - Questionnaire) 
 													</a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-adcc8b83a15448c5a08204053cfc9419.html" target="element">
-															<span class="i18n-elementtype-AssociationRelationship"></span>
-														(Patient - Condition) 
-													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-2e95426387cc4475a99c1b8c73fec978.html" target="element">
 															<span class="i18n-elementtype-AssociationRelationship"></span>
 														(Practitioner - EpisodeOfCare) 
@@ -173,10 +165,6 @@
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-5f4fd9df1df34b15a351499ad104a2ab.html" target="element">
 															<span class="i18n-elementtype-AssociationRelationship"></span>
 														(EpisodeOfCare - Encounter) 
-													</a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-2c78a03e6a4d43db800ede361cb5a600.html" target="element">
-															<span class="i18n-elementtype-AssociationRelationship"></span>
-														(Condition - EpisodeOfCare) 
 													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-0d6a994588774c948cc4cc7243b0fb96.html" target="element">
 															<span class="i18n-elementtype-RealizationRelationship"></span>
@@ -240,7 +228,7 @@
 													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-59195bff666240cab72b605ddeccffc3.html" target="element">
 															<span class="i18n-elementtype-RealizationRelationship"></span>
-														(VM with Docker - PostgreSQL) 
+														(VM with Docker - Derby or PostgreSQL) 
 													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-d116790197f44bd4a50faa38883882de.html" target="element">
 															<span class="i18n-elementtype-RealizationRelationship"></span>
@@ -248,7 +236,7 @@
 													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-7c4c5c08463e46f8a812837e3bb22cd9.html" target="element">
 															<span class="i18n-elementtype-AssociationRelationship"></span>
-														(PostgreSQL - HAPI FHIR Server) 
+														(Derby or PostgreSQL - HAPI FHIR Server) 
 													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-787e35c3412041af92bfb18a01ebfe00.html" target="element">
 															<span class="i18n-elementtype-AssociationRelationship"></span>
@@ -260,7 +248,15 @@
 													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-82d7fd9af5a34e3c89c153be79680868.html" target="element">
 															<span class="i18n-elementtype-FlowRelationship"></span>
-														(cot-transform - PostgreSQL) 
+														(cot-transform - Derby or PostgreSQL) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-595da13be33745cbbe40fbf6fd2cd34c.html" target="element">
+															has zero or more
+														(Encounter - Condition) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-78ae953839a747ad85e41ad4fdfc1313.html" target="element">
+															has zero or more
+														(Patient - Observation) 
 													</a></li>
 
 									</ul>

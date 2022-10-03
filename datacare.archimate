@@ -84,7 +84,7 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
     <element xsi:type="archimate:ApplicationComponent" name="local mysql db" id="id-7f047fd718f742a8a4200052956c37f7"/>
     <element xsi:type="archimate:ApplicationComponent" name="CoT 1.0 MySQL" id="id-4467a9d37fc04f3e889b7d9ae2ba7fb1"/>
     <element xsi:type="archimate:ApplicationComponent" name="HAPI FHIR Server" id="id-6a41955501534d14bd11f3cc10368775"/>
-    <element xsi:type="archimate:ApplicationComponent" name="PostgreSQL" id="id-78474a3abd6b4303b6de19c88ba96029"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Derby or PostgreSQL" id="id-78474a3abd6b4303b6de19c88ba96029"/>
     <element xsi:type="archimate:ApplicationComponent" name="MitreID Connect" id="id-1a2484831fa74ca99f09a0a3a4c10aa3"/>
     <element xsi:type="archimate:ApplicationComponent" name="cot-transform" id="id-6e8ab145de734540a18395072fee6e54"/>
   </folder>
@@ -103,23 +103,18 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
       <documentation>During an Encounter at the clinic, procedures may be performed on the patient. Procedures can only have occured if there was an Encounter.
 </documentation>
     </element>
-    <element xsi:type="archimate:AssociationRelationship" name="has zero or more" id="id-419a566341fa4433a0f93cfa6315b0f6" source="id-648edbb56b7a4d60a67acddd5dcba9de" target="id-2f511a08defa4b229348b58b26c3c24b" directed="true">
-      <documentation>The healthcare event (e.g. a patient and healthcare provider interaction) during which this observation is made.</documentation>
-    </element>
     <element xsi:type="archimate:AssociationRelationship" name="has zero or more" id="id-fff56358a3f44957847e9f452366b643" source="id-648edbb56b7a4d60a67acddd5dcba9de" target="id-598f32f7932e4abaa35f1d846ec70b32" directed="true"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-49c69140f11f41d1bf080472fe3068f0" source="id-598f32f7932e4abaa35f1d846ec70b32" target="id-33914b38ef3146829c7b7542bfb58f20"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-5306c19b514147999994fc258febacab" source="id-598f32f7932e4abaa35f1d846ec70b32" target="id-a25435903f4c4c28acc8be2cd451ae46"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-d3eb82d7720c4a70bcd449e05c5f6acb" source="id-33914b38ef3146829c7b7542bfb58f20" target="id-a25435903f4c4c28acc8be2cd451ae46"/>
     <element xsi:type="archimate:AssociationRelationship" name="has zero or more" id="id-d0f04c976f6341dbbc4c18549a52c608" source="id-648edbb56b7a4d60a67acddd5dcba9de" target="id-6fd7e669c68a43359e53183eda3ee839" directed="true"/>
     <element xsi:type="archimate:AssociationRelationship" name="has one" id="id-10672eae34b04b8f9f5782fbdf317561" source="id-6fd7e669c68a43359e53183eda3ee839" target="id-e7098f5a915e47cead7285e279a6ab38" directed="true"/>
-    <element xsi:type="archimate:AssociationRelationship" id="id-adcc8b83a15448c5a08204053cfc9419" source="id-565baebc42304b20975d8540864f41ea" target="id-2f77c15b509b4d6b91dabb3bd4bef6e6" directed="true"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-2e95426387cc4475a99c1b8c73fec978" source="id-c3860e8a35284667a1a920c73d34f566" target="id-3018745ebc8f478cb736a46aee303002"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-99e72a9b609d4cda973778e1fbfba1f2" source="id-61670b97b2ac4c65992b94ce2816edf0" target="id-3018745ebc8f478cb736a46aee303002"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-ac8c701bf8ca4d95a8e551f735e95270" source="id-565baebc42304b20975d8540864f41ea" target="id-3018745ebc8f478cb736a46aee303002"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-6c89b46041854797b42a4d38ad32556d" source="id-48ea2cd215d14ca6ae32b42082162f8f" target="id-c3860e8a35284667a1a920c73d34f566"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-be5e48d8425040f3bb5c4e60beec00c2" source="id-48ea2cd215d14ca6ae32b42082162f8f" target="id-61670b97b2ac4c65992b94ce2816edf0"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-5f4fd9df1df34b15a351499ad104a2ab" source="id-3018745ebc8f478cb736a46aee303002" target="id-648edbb56b7a4d60a67acddd5dcba9de"/>
-    <element xsi:type="archimate:AssociationRelationship" id="id-2c78a03e6a4d43db800ede361cb5a600" source="id-2f77c15b509b4d6b91dabb3bd4bef6e6" target="id-3018745ebc8f478cb736a46aee303002"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-0d6a994588774c948cc4cc7243b0fb96" source="id-2d840145f23c492ca4c12069c0972139" target="id-eba986b1187b476394428f8500799a2f"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-8d9425ce8fbf46f488f66cacb228bae4" source="id-2d840145f23c492ca4c12069c0972139" target="id-b982a5b2521a4f22a2d6898227965ac0"/>
     <element xsi:type="archimate:ServingRelationship" id="id-7e58ea964bdc462fb983ab6b3333079d" source="id-b982a5b2521a4f22a2d6898227965ac0" target="id-eba986b1187b476394428f8500799a2f"/>
@@ -141,6 +136,8 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
     <element xsi:type="archimate:AssociationRelationship" id="id-787e35c3412041af92bfb18a01ebfe00" source="id-1a2484831fa74ca99f09a0a3a4c10aa3" target="id-6a41955501534d14bd11f3cc10368775"/>
     <element xsi:type="archimate:FlowRelationship" id="id-f43676d6e084417ca9760758a5e7eeee" source="id-4467a9d37fc04f3e889b7d9ae2ba7fb1" target="id-6e8ab145de734540a18395072fee6e54"/>
     <element xsi:type="archimate:FlowRelationship" id="id-82d7fd9af5a34e3c89c153be79680868" source="id-6e8ab145de734540a18395072fee6e54" target="id-78474a3abd6b4303b6de19c88ba96029"/>
+    <element xsi:type="archimate:AssociationRelationship" name="has zero or more" id="id-595da13be33745cbbe40fbf6fd2cd34c" source="id-648edbb56b7a4d60a67acddd5dcba9de" target="id-2f77c15b509b4d6b91dabb3bd4bef6e6" directed="true"/>
+    <element xsi:type="archimate:AssociationRelationship" name="has zero or more" id="id-78ae953839a747ad85e41ad4fdfc1313" source="id-565baebc42304b20975d8540864f41ea" target="id-2f511a08defa4b229348b58b26c3c24b" directed="true"/>
   </folder>
   <folder name="Views" id="id-8f8b54a5ea8445a1996c48efa7af5b50" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="Conceptual data model" id="id-31092f1339da4108a52df9ad5f90e146" viewpoint="information_structure">
@@ -175,21 +172,21 @@ This is a record of a medication being taken by a patient or that a medication h
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-eecd68ce224b4debacde56cd327502f5" archimateElement="id-565baebc42304b20975d8540864f41ea">
         <bounds x="288" y="157" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-fd198d920cef472ebce2653e85ec9d8f" source="id-eecd68ce224b4debacde56cd327502f5" target="id-b64ccc72c175423b829b434b207b84a6" archimateRelationship="id-adcc8b83a15448c5a08204053cfc9419"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-7ca9425d6d594967a04b49b857032730" source="id-eecd68ce224b4debacde56cd327502f5" target="id-f69d6a75c7394be1842e585e2c9b2911" archimateRelationship="id-ac8c701bf8ca4d95a8e551f735e95270"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-40365e58cb5048008938c0aa90bf0d76" source="id-eecd68ce224b4debacde56cd327502f5" target="id-52b80d5ceec44e5aab61d64814724764" archimateRelationship="id-78ae953839a747ad85e41ad4fdfc1313"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-54bcee5615124676a752acdcbf385d28" targetConnections="id-b860f0acf43b4cb3bd7244c4124923fe" archimateElement="id-648edbb56b7a4d60a67acddd5dcba9de">
         <bounds x="453" y="335" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-55014af3c50e43578aadb9cd75b77633" source="id-54bcee5615124676a752acdcbf385d28" target="id-6c722567f8c040d8bb4a60e072664e12" archimateRelationship="id-73c3139dff394f89a63b6b1dde6e1f71"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-afccb2a406c24248b30e1eabf6abcab7" source="id-54bcee5615124676a752acdcbf385d28" target="id-52b80d5ceec44e5aab61d64814724764" archimateRelationship="id-419a566341fa4433a0f93cfa6315b0f6"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-4d45aaada2c84627a7cfa13ad239fc57" source="id-54bcee5615124676a752acdcbf385d28" target="id-a36c630b3f854951b1173d9e0dc560ba" archimateRelationship="id-fff56358a3f44957847e9f452366b643"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-66839ff0a53d4acbb797e6cc75ce9f7d" source="id-54bcee5615124676a752acdcbf385d28" target="id-7300746ee9534c44b07b0b0836fb296e" archimateRelationship="id-d0f04c976f6341dbbc4c18549a52c608"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-bed0c08c62914ce599ac5caa672004f5" source="id-54bcee5615124676a752acdcbf385d28" target="id-b64ccc72c175423b829b434b207b84a6" archimateRelationship="id-595da13be33745cbbe40fbf6fd2cd34c"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-6c722567f8c040d8bb4a60e072664e12" targetConnections="id-55014af3c50e43578aadb9cd75b77633" archimateElement="id-2d7911e054c44be7b61125946f716c82">
-        <bounds x="528" y="528" width="120" height="55"/>
+        <bounds x="540" y="522" width="120" height="55"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-52b80d5ceec44e5aab61d64814724764" targetConnections="id-afccb2a406c24248b30e1eabf6abcab7" archimateElement="id-2f511a08defa4b229348b58b26c3c24b">
-        <bounds x="360" y="468" width="120" height="55"/>
+      <child xsi:type="archimate:DiagramObject" id="id-52b80d5ceec44e5aab61d64814724764" targetConnections="id-40365e58cb5048008938c0aa90bf0d76" archimateElement="id-2f511a08defa4b229348b58b26c3c24b">
+        <bounds x="288" y="36" width="120" height="55"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f340f328001f434db90dd06c7741bda4" targetConnections="id-78e3d11dcb7140238f0e32bdcf37e7e5" archimateElement="id-e7098f5a915e47cead7285e279a6ab38">
         <bounds x="120" y="432" width="157" height="55"/>
@@ -198,11 +195,10 @@ This is a record of a medication being taken by a patient or that a medication h
         <bounds x="120" y="335" width="157" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-78e3d11dcb7140238f0e32bdcf37e7e5" source="id-7300746ee9534c44b07b0b0836fb296e" target="id-f340f328001f434db90dd06c7741bda4" archimateRelationship="id-10672eae34b04b8f9f5782fbdf317561"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-b64ccc72c175423b829b434b207b84a6" targetConnections="id-fd198d920cef472ebce2653e85ec9d8f" archimateElement="id-2f77c15b509b4d6b91dabb3bd4bef6e6">
-        <bounds x="288" y="60" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-09432f5e093840d8b3a1333b268a3783" source="id-b64ccc72c175423b829b434b207b84a6" target="id-f69d6a75c7394be1842e585e2c9b2911" archimateRelationship="id-2c78a03e6a4d43db800ede361cb5a600"/>
+      <child xsi:type="archimate:DiagramObject" id="id-b64ccc72c175423b829b434b207b84a6" targetConnections="id-bed0c08c62914ce599ac5caa672004f5" archimateElement="id-2f77c15b509b4d6b91dabb3bd4bef6e6">
+        <bounds x="407" y="576" width="120" height="55"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f69d6a75c7394be1842e585e2c9b2911" targetConnections="id-315f5eb392b74b01adf106b8af8402b5 id-e483d6f90ffd4be8a7b2b7fc34394020 id-7ca9425d6d594967a04b49b857032730 id-09432f5e093840d8b3a1333b268a3783" archimateElement="id-3018745ebc8f478cb736a46aee303002">
+      <child xsi:type="archimate:DiagramObject" id="id-f69d6a75c7394be1842e585e2c9b2911" targetConnections="id-315f5eb392b74b01adf106b8af8402b5 id-e483d6f90ffd4be8a7b2b7fc34394020 id-7ca9425d6d594967a04b49b857032730" archimateElement="id-3018745ebc8f478cb736a46aee303002">
         <bounds x="453" y="157" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-b860f0acf43b4cb3bd7244c4124923fe" source="id-f69d6a75c7394be1842e585e2c9b2911" target="id-54bcee5615124676a752acdcbf385d28" archimateRelationship="id-5f4fd9df1df34b15a351499ad104a2ab"/>
       </child>
@@ -219,10 +215,12 @@ This is a record of a medication being taken by a patient or that a medication h
         <sourceConnection xsi:type="archimate:Connection" id="id-f459ffc7ab4546649a76e21fe1b88d89" source="id-302c5cf7b880491fb37ed2b618a29158" target="id-0fd8dfc1e3d943ea82d5074c54640fb2" archimateRelationship="id-6c89b46041854797b42a4d38ad32556d"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-81c6e792d2a442f18049c26aa1f2c3f8" source="id-302c5cf7b880491fb37ed2b618a29158" target="id-390831febf95418ab4b66d0149530642" archimateRelationship="id-be5e48d8425040f3bb5c4e60beec00c2"/>
       </child>
-      <documentation>The conceptual model of MomCare is based on FHIR Resources v4.3.0. Our aim is to implement a detailed FHIR profile which can be used in all African countries. An example of such a profile is the Dutch BirthCare 1.0 profile, see https://informatiestandaarden.nictiz.nl/wiki/Gebz:V1.2_FHIR_IG 
+      <documentation>The conceptual model of DataCare is based on FHIR Resources v4.3.0. Our aim is to implement a detailed FHIR profile which can be used in all African countries.
 
-version: 0.1
-last modified date: 12 June 2022
+By default, base FHIR resources are used. Pregnancies are captured as Observations, following the FHIR International Patient Summary (IPS) standard (https://build.fhir.org/ig/HL7/fhir-ips/index.html).
+
+version: 0.2
+last modified date: 03 October 2022
 
 </documentation>
       <property key="BirthCare 1.0" value="https://informatiestandaarden.nictiz.nl/wiki/Gebz:V1.0_FHIR_IG"/>
@@ -250,9 +248,9 @@ last modified date: 12 June 2022
         </child>
       </child>
       <child xsi:type="archimate:Group" id="id-361877be45cd4bc7891f448126cfbd88" name="Clinic" textAlignment="1">
-        <bounds x="120" y="12" width="217" height="265"/>
+        <bounds x="120" y="24" width="217" height="253"/>
         <child xsi:type="archimate:DiagramObject" id="id-75e77ba2636b400c96687fa4d3e82e15" archimateElement="id-2d840145f23c492ca4c12069c0972139">
-          <bounds x="24" y="48" width="169" height="193"/>
+          <bounds x="24" y="42" width="169" height="193"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-747afac1adf44fe893b727b042bde5bb" source="id-75e77ba2636b400c96687fa4d3e82e15" target="id-75eebf643c504102882f8cc664d91959" archimateRelationship="id-8d9425ce8fbf46f488f66cacb228bae4"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-dc0a87592b594fa892744b5bb9cfd3c0" source="id-75e77ba2636b400c96687fa4d3e82e15" target="id-2906e6dbec35494eb2027f355c41d97a" archimateRelationship="id-0d6a994588774c948cc4cc7243b0fb96"/>
           <child xsi:type="archimate:DiagramObject" id="id-2906e6dbec35494eb2027f355c41d97a" targetConnections="id-bb1df70116504036b211e7a712633872 id-dc0a87592b594fa892744b5bb9cfd3c0" archimateElement="id-eba986b1187b476394428f8500799a2f">
