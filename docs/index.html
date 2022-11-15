@@ -69,6 +69,7 @@
 													<li class="tree-element  "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-c3860e8a35284667a1a920c73d34f566.html" target="element"> Practitioner </a></li>
 													<li class="tree-element  "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-61670b97b2ac4c65992b94ce2816edf0.html" target="element"> Organization </a></li>
 													<li class="tree-element  "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-48ea2cd215d14ca6ae32b42082162f8f.html" target="element"> PractitionerRole </a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-8e23645706454f6a84d5a5aeedc0d476.html" target="element"> Location </a></li>
 
 									</ul>
 								</li>
@@ -114,45 +115,17 @@
 								</li>
 								<li class="tree-folder "><span class="i18n-relations"><i class="glyphicon glyphicon-triangle-right"></i> </span>
 									<ul>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-73c3139dff394f89a63b6b1dde6e1f71.html" target="element">
-															has zero or more
-														(Encounter - Procedure) 
-													</a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-fff56358a3f44957847e9f452366b643.html" target="element">
-															has zero or more
-														(Encounter - MedicationRequest) 
-													</a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-49c69140f11f41d1bf080472fe3068f0.html" target="element">
-															<span class="i18n-elementtype-AssociationRelationship"></span>
-														(MedicationRequest - MedicationDispense) 
-													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-5306c19b514147999994fc258febacab.html" target="element">
-															<span class="i18n-elementtype-AssociationRelationship"></span>
+															1..1
 														(MedicationRequest - Medication) 
 													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-d3eb82d7720c4a70bcd449e05c5f6acb.html" target="element">
-															<span class="i18n-elementtype-AssociationRelationship"></span>
+															1..1
 														(MedicationDispense - Medication) 
 													</a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-d0f04c976f6341dbbc4c18549a52c608.html" target="element">
-															has zero or more
-														(Encounter - QuestionnaireResponse) 
-													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-10672eae34b04b8f9f5782fbdf317561.html" target="element">
-															has one
+															0..1
 														(QuestionnaireResponse - Questionnaire) 
-													</a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-2e95426387cc4475a99c1b8c73fec978.html" target="element">
-															<span class="i18n-elementtype-AssociationRelationship"></span>
-														(Practitioner - EpisodeOfCare) 
-													</a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-99e72a9b609d4cda973778e1fbfba1f2.html" target="element">
-															<span class="i18n-elementtype-AssociationRelationship"></span>
-														(Organization - EpisodeOfCare) 
-													</a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-ac8c701bf8ca4d95a8e551f735e95270.html" target="element">
-															<span class="i18n-elementtype-AssociationRelationship"></span>
-														(Patient - EpisodeOfCare) 
 													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-6c89b46041854797b42a4d38ad32556d.html" target="element">
 															<span class="i18n-elementtype-AssociationRelationship"></span>
@@ -251,16 +224,60 @@
 														(cot-transform - Derby or PostgreSQL) 
 													</a></li>
 													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-595da13be33745cbbe40fbf6fd2cd34c.html" target="element">
-															has zero or more
+															0..*
 														(Encounter - Condition) 
 													</a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-78ae953839a747ad85e41ad4fdfc1313.html" target="element">
-															has zero or more
-														(Patient - Observation) 
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-d6d063a70737488a953b938c334f615d.html" target="element">
+															1..1
+														(Condition - Patient) 
 													</a></li>
-													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-326cb949e599406d864fb3044c0ed6bf.html" target="element">
-															has one or more
-														(Patient - Condition) 
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-8549e18cc9fd4bb3932b82f6117d6375.html" target="element">
+															1..1
+														(EpisodeOfCare - Patient) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-b3b808e58a424080b4532d1b1829a381.html" target="element">
+															0..1
+														(Observation - Patient) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-d878b268db024c2c8456160f3e7df205.html" target="element">
+															0..1
+														(Encounter - Patient) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-3b1d7a6db3b24dd5bd3bd8da5af2e4e2.html" target="element">
+															0..1
+														(EpisodeOfCare - Organization) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-93f47f3705b141489787e4df4022a521.html" target="element">
+															0..1
+														(Location - Organization) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-d631027897c54f19ba750b46c72e237f.html" target="element">
+															0..1
+														(QuestionnaireResponse - Encounter) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-5e35d742d2294a5ca5283b129297a6f8.html" target="element">
+															asserter 0..1
+														(Condition - Practitioner) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-60cfe18b360d4d9aaa4d705b687a7e3a.html" target="element">
+															1..1
+														(Procedure - Patient) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-9e729a02dde44e2180a05fa820271efe.html" target="element">
+															0..1
+														(Procedure - Encounter) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-ce19c61debdf43989b0a43b08b41aec6.html" target="element">
+															0..1
+														(MedicationRequest - Encounter) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-9cd89d4c831e4007baeea4e3cce28030.html" target="element">
+															partOf 0..*
+														(MedicationDispense - Procedure) 
+													</a></li>
+													<li class="tree-element "><a href="id-690b66a0f4024b0fb014f7e801f7ae23/elements/id-ac6c6951032c407484f2d13974f441d2.html" target="element">
+															0..*
+														(MedicationDispense - MedicationRequest) 
 													</a></li>
 
 									</ul>
