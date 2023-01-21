@@ -11,5 +11,4 @@ We use [Archi](https://www.archimatetool.com) as our primary tool. To contribute
 - commit and push your work
 
 TO DO:
-- Automate build of HTML report (see [issue 1](https://github.com/PharmAccess/momcare-archimate/issues/1))
 - Use [coArchi plugin](https://www.archimatetool.com/plugins/) to improve collaborative work on Archi through sharing and versioning of models in a Repository.
