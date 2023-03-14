@@ -81,10 +81,19 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
     <element xsi:type="archimate:ApplicationComponent" name="Analytics server (Jupyter)" id="id-65147c079d1d457f945ccfab4e0853d8"/>
     <element xsi:type="archimate:ApplicationComponent" name="Analytics workbench (notebook)" id="id-d295ec7d391b47e4aa6af11d417d89bb"/>
     <element xsi:type="archimate:ApplicationComponent" name="FHIR native app (OpenSRP)" id="id-9b17db97efc44b18bf2f59b6caa15cba"/>
+    <element xsi:type="archimate:DataObject" name="FHIR Resource" id="id-802a285539064feab8d107b042222993"/>
+    <element xsi:type="archimate:ApplicationInterface" name="FHIR Bulk API" id="id-a69ab31229e246c7b7e18b57ba03e29f"/>
+    <element xsi:type="archimate:ApplicationService" name="Ingesting" id="id-637710a2a58843408acec653887060e3"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Value Points Dashboard" id="id-9db6c2fffe994e0f9454976c830ff0ca"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Analytics workbench" id="id-43d5fa181f9643e0956a810464333016"/>
+    <element xsi:type="archimate:ApplicationInterface" name="Azure Cloud storage API" id="id-6de7663f7f3149d594ddb454636c413c"/>
+    <element xsi:type="archimate:ApplicationComponent" name="FHIRstation" id="id-ca81b112410648499e5b7686e3832002"/>
   </folder>
   <folder name="Technology &amp; Physical" id="id-7a80257f116e4c72b45248525c268bc9" type="technology">
     <element xsi:type="archimate:Node" name="tablet" id="id-2d840145f23c492ca4c12069c0972139"/>
     <element xsi:type="archimate:Node" name="desktop" id="id-8f479b1fd8f340bdb697aec2c45437a8"/>
+    <element xsi:type="archimate:Artifact" name="FHIR bulk ndjson" id="id-6ec1e206767942f79c39087db12b675a"/>
+    <element xsi:type="archimate:Artifact" name="DuckDB database file" id="id-4fbfe9f43b9e40178bcf8231ecc7fe61"/>
   </folder>
   <folder name="Motivation" id="id-b69999bf1ddc4534b305b69e703edb6d" type="motivation"/>
   <folder name="Implementation &amp; Migration" id="id-712626af517942539726b803b35ea4d4" type="implementation_migration"/>
@@ -130,6 +139,13 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
     <element xsi:type="archimate:AssociationRelationship" id="id-0ade79b017b5410093c62c2fd346219b" source="id-65147c079d1d457f945ccfab4e0853d8" target="id-d295ec7d391b47e4aa6af11d417d89bb"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-ac43f1fb0b164ca7a38f2e476413f657" source="id-2d840145f23c492ca4c12069c0972139" target="id-9b17db97efc44b18bf2f59b6caa15cba"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-e7940186345043c786f6ed40f4dd4683" source="id-9b17db97efc44b18bf2f59b6caa15cba" target="id-83d1a8c7b3fb4cd18c77c8c075b83e35"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-631542b604014bec8d314b5855995e09" source="id-6ec1e206767942f79c39087db12b675a" target="id-802a285539064feab8d107b042222993"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-bacb063e78584b8ab8be9c0091f5298d" source="id-a69ab31229e246c7b7e18b57ba03e29f" target="id-802a285539064feab8d107b042222993"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-bced5b851beb49bea6f6ea603bcd5196" source="id-6de7663f7f3149d594ddb454636c413c" target="id-9db6c2fffe994e0f9454976c830ff0ca"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-59a40e22efa3446b9fb21d16e7221ca4" source="id-6de7663f7f3149d594ddb454636c413c" target="id-43d5fa181f9643e0956a810464333016"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-d3bcd20f24be46ba848635d8cc84bab6" source="id-6de7663f7f3149d594ddb454636c413c" target="id-4fbfe9f43b9e40178bcf8231ecc7fe61" accessType="3"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-ff415087b2004a4aa6b4a7755ab5d326" source="id-ca81b112410648499e5b7686e3832002" target="id-802a285539064feab8d107b042222993" accessType="1"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-ee4841598d694ee99258377d246c7b2f" source="id-6de7663f7f3149d594ddb454636c413c" target="id-ca81b112410648499e5b7686e3832002"/>
   </folder>
   <folder name="Views" id="id-8f8b54a5ea8445a1996c48efa7af5b50" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="Conceptual data model" id="id-31092f1339da4108a52df9ad5f90e146" viewpoint="information_structure">
@@ -331,6 +347,48 @@ Derby or PostgreSQL as FHIR database
 https://hapifhir.io/hapi-fhir/docs/server_jpa/architecture.html
 
 Data from CoT MySQL database is transformed with Python CLI transformer is specifically developed for this demonstrator. </documentation>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Data processing" id="id-212c8b3fb1e044f3a1ae45444dde3807">
+      <child xsi:type="archimate:Group" id="id-5e74cd8b637043768d8de48d2367acdc" name="end-user facing apps" textAlignment="1">
+        <bounds x="840" y="372" width="241" height="253"/>
+        <child xsi:type="archimate:DiagramObject" id="id-f402cb8fb202455da99107fefc05cacd" targetConnections="id-45f600f8230b48548b7b246499cc87d4" archimateElement="id-9db6c2fffe994e0f9454976c830ff0ca">
+          <bounds x="60" y="60" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-b02ea66b51e743d4a60571221b08df2e" targetConnections="id-2b3f8dfdbcd442e390b853107a057a30" archimateElement="id-43d5fa181f9643e0956a810464333016">
+          <bounds x="60" y="144" width="120" height="55"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:Group" id="id-45fb69aecedc4976b39caeee1354c129" name="SQL-on-FHIR" textAlignment="1">
+        <bounds x="420" y="372" width="397" height="253"/>
+      </child>
+      <child xsi:type="archimate:Group" id="id-1149d0c2a4d34a5a8175cfcb3de248f7" name="source system" textAlignment="1">
+        <bounds x="24" y="372" width="373" height="253"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-6c5085c1ed6948b1a59a084c81027d42" targetConnections="id-15dc5d1a2a48482bbf3c08efa9671595 id-da045641949044eda6215eea3d7a43ce id-121c5d9bb90848a585fe56f5d01e7f17" archimateElement="id-802a285539064feab8d107b042222993">
+        <bounds x="243" y="431" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-4bede8edd75841da83df69a31c47c0c1" archimateElement="id-6ec1e206767942f79c39087db12b675a">
+        <bounds x="243" y="540" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-15dc5d1a2a48482bbf3c08efa9671595" source="id-4bede8edd75841da83df69a31c47c0c1" target="id-6c5085c1ed6948b1a59a084c81027d42" archimateRelationship="id-631542b604014bec8d314b5855995e09"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-0aee2d1586f74862b6635fb7e501a8f5" archimateElement="id-a69ab31229e246c7b7e18b57ba03e29f">
+        <bounds x="60" y="431" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-da045641949044eda6215eea3d7a43ce" source="id-0aee2d1586f74862b6635fb7e501a8f5" target="id-6c5085c1ed6948b1a59a084c81027d42" archimateRelationship="id-bacb063e78584b8ab8be9c0091f5298d"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-fd02cfd09e3f438fa230cb85bc26e4b1" targetConnections="id-6551f415a96249d4b66721995f4f8afb" archimateElement="id-4fbfe9f43b9e40178bcf8231ecc7fe61">
+        <bounds x="636" y="540" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-56a36e21262645df8617c96bf83cea42" archimateElement="id-6de7663f7f3149d594ddb454636c413c">
+        <bounds x="636" y="431" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-45f600f8230b48548b7b246499cc87d4" source="id-56a36e21262645df8617c96bf83cea42" target="id-f402cb8fb202455da99107fefc05cacd" archimateRelationship="id-bced5b851beb49bea6f6ea603bcd5196"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-2b3f8dfdbcd442e390b853107a057a30" source="id-56a36e21262645df8617c96bf83cea42" target="id-b02ea66b51e743d4a60571221b08df2e" archimateRelationship="id-59a40e22efa3446b9fb21d16e7221ca4"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-6551f415a96249d4b66721995f4f8afb" source="id-56a36e21262645df8617c96bf83cea42" target="id-fd02cfd09e3f438fa230cb85bc26e4b1" archimateRelationship="id-d3bcd20f24be46ba848635d8cc84bab6"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-19ed750fded64fa99a4f2e4bea75252f" source="id-56a36e21262645df8617c96bf83cea42" target="id-78b00036ae1a46d39309adad137a012d" archimateRelationship="id-ee4841598d694ee99258377d246c7b2f"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-78b00036ae1a46d39309adad137a012d" targetConnections="id-19ed750fded64fa99a4f2e4bea75252f" archimateElement="id-ca81b112410648499e5b7686e3832002">
+        <bounds x="456" y="431" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-121c5d9bb90848a585fe56f5d01e7f17" source="id-78b00036ae1a46d39309adad137a012d" target="id-6c5085c1ed6948b1a59a084c81027d42" archimateRelationship="id-ff415087b2004a4aa6b4a7755ab5d326"/>
+      </child>
     </element>
   </folder>
 </archimate:model>
