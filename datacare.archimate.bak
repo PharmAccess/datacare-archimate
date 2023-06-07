@@ -2,62 +2,116 @@
 <archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="DataCare" id="id-690b66a0f4024b0fb014f7e801f7ae23" version="4.9.0">
   <folder name="Strategy" id="id-e29802ecce5f4972be10021099686fce" type="strategy"/>
   <folder name="Business" id="id-3a50f47451d441a8abcbcb5770a04d49" type="business">
-    <element xsi:type="archimate:BusinessObject" name="Patient" id="id-565baebc42304b20975d8540864f41ea">
-      <property key="FHIR" value="https://www.hl7.org/fhir/patient.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="Encounter" id="id-648edbb56b7a4d60a67acddd5dcba9de">
-      <documentation>An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
+    <folder name="FHIR Resources" id="id-21fd577076fa47559e90777fdbeb884d">
+      <element xsi:type="archimate:BusinessObject" name="Condition" id="id-2f77c15b509b4d6b91dabb3bd4bef6e6">
+        <documentation>A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern.</documentation>
+        <property key="FHIR" value="https://www.hl7.org/fhir/condition.html"/>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="Encounter" id="id-648edbb56b7a4d60a67acddd5dcba9de">
+        <documentation>An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
 
 Also known as: consultation.</documentation>
-      <property key="FHIR" value="https://www.hl7.org/fhir/encounter.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="Procedure" id="id-2d7911e054c44be7b61125946f716c82">
-      <documentation>An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.</documentation>
-      <property key="FHIR" value="https://www.hl7.org/fhir/procedure.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="Observation" id="id-2f511a08defa4b229348b58b26c3c24b">
-      <documentation>Measurements and simple assertions made about a patient, device or other subject.</documentation>
-      <property key="FHIR" value="https://www.hl7.org/fhir/observation.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="Medication" id="id-a25435903f4c4c28acc8be2cd451ae46">
-      <documentation>This resource is primarily used for the identification and definition of a medication for the purposes of prescribing, dispensing, and administering a medication as well as for making statements about medication use.</documentation>
-      <property key="FHIR" value="https://www.hl7.org/fhir/medication.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="MedicationDispense" id="id-33914b38ef3146829c7b7542bfb58f20">
-      <documentation>Indicates that a medication product is to be or has been dispensed for a named person/patient. This includes a description of the medication product (supply) provided and the instructions for administering the medication. The medication dispense is the result of a pharmacy system responding to a medication order.</documentation>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="MedicationRequest" id="id-598f32f7932e4abaa35f1d846ec70b32"/>
-    <element xsi:type="archimate:BusinessObject" name="Questionnaire" id="id-e7098f5a915e47cead7285e279a6ab38">
-      <documentation>A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.</documentation>
-      <property key="FHIR" value="https://www.hl7.org/fhir/questionnaire.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="QuestionnaireResponse" id="id-6fd7e669c68a43359e53183eda3ee839">
-      <documentation>A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.</documentation>
-      <property key="FHIR" value="https://www.hl7.org/fhir/questionnaireresponse.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="Condition" id="id-2f77c15b509b4d6b91dabb3bd4bef6e6">
-      <documentation>A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern.</documentation>
-      <property key="FHIR" value="https://www.hl7.org/fhir/condition.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="EpisodeOfCare" id="id-3018745ebc8f478cb736a46aee303002">
-      <documentation>An association between a patient and an organization / healthcare provider(s) during which time encounters may occur. The managing organization assumes a level of responsibility for the patient during this time.</documentation>
-      <property key="FHIR" value="https://www.hl7.org/fhir/episodeofcare.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="Practitioner" id="id-c3860e8a35284667a1a920c73d34f566">
-      <documentation>A person who is directly or indirectly involved in the provisioning of healthcare.</documentation>
-      <property key="FHIR" value="https://www.hl7.org/fhir/practitioner.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="Organization" id="id-61670b97b2ac4c65992b94ce2816edf0">
-      <documentation>A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action. Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc.</documentation>
-      <property key="FHIR" value="https://www.hl7.org/fhir/organization.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="PractitionerRole" id="id-48ea2cd215d14ca6ae32b42082162f8f">
-      <documentation>A specific set of Roles/Locations/specialties/services that a practitioner may perform at an organization for a period of time.</documentation>
-      <property key="FHIR" value="https://www.hl7.org/fhir/practitionerrole.html"/>
-    </element>
-    <element xsi:type="archimate:BusinessObject" name="Location" id="id-8e23645706454f6a84d5a5aeedc0d476"/>
+        <property key="FHIR" value="https://www.hl7.org/fhir/encounter.html"/>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="EpisodeOfCare" id="id-3018745ebc8f478cb736a46aee303002">
+        <documentation>An association between a patient and an organization / healthcare provider(s) during which time encounters may occur. The managing organization assumes a level of responsibility for the patient during this time.</documentation>
+        <property key="FHIR" value="https://www.hl7.org/fhir/episodeofcare.html"/>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="Location" id="id-8e23645706454f6a84d5a5aeedc0d476"/>
+      <element xsi:type="archimate:BusinessObject" name="Medication" id="id-a25435903f4c4c28acc8be2cd451ae46">
+        <documentation>This resource is primarily used for the identification and definition of a medication for the purposes of prescribing, dispensing, and administering a medication as well as for making statements about medication use.</documentation>
+        <property key="FHIR" value="https://www.hl7.org/fhir/medication.html"/>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="MedicationDispense" id="id-33914b38ef3146829c7b7542bfb58f20">
+        <documentation>Indicates that a medication product is to be or has been dispensed for a named person/patient. This includes a description of the medication product (supply) provided and the instructions for administering the medication. The medication dispense is the result of a pharmacy system responding to a medication order.</documentation>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="MedicationRequest" id="id-598f32f7932e4abaa35f1d846ec70b32"/>
+      <element xsi:type="archimate:BusinessObject" name="Observation" id="id-2f511a08defa4b229348b58b26c3c24b">
+        <documentation>Measurements and simple assertions made about a patient, device or other subject.</documentation>
+        <property key="FHIR" value="https://www.hl7.org/fhir/observation.html"/>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="Organization" id="id-61670b97b2ac4c65992b94ce2816edf0">
+        <documentation>A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action. Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc.</documentation>
+        <property key="FHIR" value="https://www.hl7.org/fhir/organization.html"/>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="Patient" id="id-565baebc42304b20975d8540864f41ea">
+        <property key="FHIR" value="https://www.hl7.org/fhir/patient.html"/>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="Practitioner" id="id-c3860e8a35284667a1a920c73d34f566">
+        <documentation>A person who is directly or indirectly involved in the provisioning of healthcare.</documentation>
+        <property key="FHIR" value="https://www.hl7.org/fhir/practitioner.html"/>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="PractitionerRole" id="id-48ea2cd215d14ca6ae32b42082162f8f">
+        <documentation>A specific set of Roles/Locations/specialties/services that a practitioner may perform at an organization for a period of time.</documentation>
+        <property key="FHIR" value="https://www.hl7.org/fhir/practitionerrole.html"/>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="Procedure" id="id-2d7911e054c44be7b61125946f716c82">
+        <documentation>An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.</documentation>
+        <property key="FHIR" value="https://www.hl7.org/fhir/procedure.html"/>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="Questionnaire" id="id-e7098f5a915e47cead7285e279a6ab38">
+        <documentation>A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.</documentation>
+        <property key="FHIR" value="https://www.hl7.org/fhir/questionnaire.html"/>
+      </element>
+      <element xsi:type="archimate:BusinessObject" name="QuestionnaireResponse" id="id-6fd7e669c68a43359e53183eda3ee839">
+        <documentation>A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.</documentation>
+        <property key="FHIR" value="https://www.hl7.org/fhir/questionnaireresponse.html"/>
+      </element>
+    </folder>
+    <folder name="Roles" id="id-5fa45544e59c4024a39c0337b29be282"/>
+    <folder name="openHIE" id="id-fd5df94f70a140a2a856b203dfd06a15">
+      <folder name="Analytics Services" id="id-9d855e69246346a390d322a43e3376e2"/>
+      <folder name="Business Services" id="id-25f1ad11771541ccbd81fd2224ba87b7"/>
+      <folder name="Common Services" id="id-d5ff81faa1a449328535314f2c472dd7"/>
+    </folder>
+    <element xsi:type="archimate:BusinessActor" name="Patient" id="id-cb40812219e5441e9f20fa451e4e7578"/>
+    <element xsi:type="archimate:BusinessActor" name="Professional caregiver" id="id-af2a7e167f81420cb15a8ffd5feed28c"/>
+    <element xsi:type="archimate:BusinessActor" name="Community Health Worker" id="id-ddad3c9e7bd8498a91d83610fe1b7395"/>
+    <element xsi:type="archimate:BusinessActor" name="Patient Group Leader" id="id-8b2e3148fb9a4ed9b28b93db277b33ac"/>
+    <element xsi:type="archimate:BusinessActor" name="Informal Caregivers" id="id-84360cc985b24213aca8362527eee371"/>
+    <element xsi:type="archimate:BusinessActor" name="Remote telehealth professional" id="id-c55181f4dbfb4459a483c0575bcc6e2c"/>
+    <element xsi:type="archimate:BusinessService" name="Integrated Service Desk" id="id-78b06b23ac7744bdb6989877d5ca49db"/>
   </folder>
   <folder name="Application" id="id-ee605c71b8294cf090cf9a85a3419f5f" type="application">
+    <folder name="openHIE" id="id-d42e66faaae8424e8b907358f4eb3ed7">
+      <folder name="Point of Service" id="id-b5ef9921257b4775969288ef907d48d1">
+        <element xsi:type="archimate:ApplicationComponent" name="Community Worker App" id="id-1522d20aad6a44e8ac4199cdb2c1db84"/>
+        <element xsi:type="archimate:ApplicationComponent" name="EMR" id="id-4342360ad9154175be9ab0a8a558ebc5">
+          <documentation>Questions:
+- who is the primary custodian for the patient
+- </documentation>
+        </element>
+        <element xsi:type="archimate:ApplicationComponent" name="Medical Lab &amp; Imaging Diagnostics Systems" id="id-3841047f643d4623a10eced1060453d3"/>
+        <element xsi:type="archimate:ApplicationComponent" name="Mobile Health App" id="id-5f192107c9574f1da3f20a1d7fdddcf6"/>
+        <element xsi:type="archimate:ApplicationComponent" name="Patient Co-op App" id="id-d609b137cc8942dea9c914a979256105">
+          <documentation>Key functional requirements:
+- Group leader able to enroll particpants in group
+- Group leader can view membership status (active, suspended, timely payments etc.)
+- View how many people have payed
+- View how much people have received in return (e.g. drugs)
+- Attendance register for group meetings
+- Financial register
+- Minimal patient characteristics
+
+For more details: view Word document.
+
+Check: has Ruto already built this?!</documentation>
+        </element>
+      </folder>
+      <folder name="Analytics Services" id="id-6d67ca1b369d4bcb885f316e9fae16b5"/>
+      <folder name="Business Services" id="id-b6d7e2e1260d4b5a8364a19ee723751a">
+        <element xsi:type="archimate:ApplicationComponent" name="Health Management Information System" id="id-2199d2c2f47f453cacb38dd03ce8a973">
+          <documentation>KHIS
+</documentation>
+        </element>
+      </folder>
+      <folder name="Interoperability Layer" id="id-5f0068dc3a33443db46595fff2958647">
+        <element xsi:type="archimate:ApplicationService" name="Alerting, Logging, Queue and Auditing Service" id="id-09539d8bfb3d48c69d1c92c36bc83c4c"/>
+        <element xsi:type="archimate:ApplicationService" name="Authentication, Authorization and Encryption Service" id="id-adb28c3986c54f6c9d811e570f6645fb"/>
+        <element xsi:type="archimate:ApplicationService" name="Interlinking &amp; Routing Service" id="id-9bf578fef2204821823c9e3e0428db9e"/>
+        <element xsi:type="archimate:ApplicationService" name="Transformation, Translation &amp; Validation Service" id="id-a641a07904a6416f83f0a6ab75422f18"/>
+      </folder>
+    </folder>
     <element xsi:type="archimate:ApplicationComponent" name="FHIR server (HAPI)" id="id-83d1a8c7b3fb4cd18c77c8c075b83e35">
       <documentation>Reference implementation uses Java-based https://hapifhir.io/
 </documentation>
@@ -75,22 +129,111 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
     <element xsi:type="archimate:ApplicationComponent" name="MomCare app" id="id-6e407cecbf81456c837841410495c921"/>
     <element xsi:type="archimate:ApplicationComponent" name="local database" id="id-7f047fd718f742a8a4200052956c37f7"/>
     <element xsi:type="archimate:ApplicationComponent" name="database server" id="id-4467a9d37fc04f3e889b7d9ae2ba7fb1"/>
-    <element xsi:type="archimate:ApplicationComponent" name="Derby or PostgreSQL" id="id-78474a3abd6b4303b6de19c88ba96029"/>
     <element xsi:type="archimate:ApplicationComponent" name="Identity &amp; authentication server (KeyCloak)" id="id-1a2484831fa74ca99f09a0a3a4c10aa3"/>
     <element xsi:type="archimate:ApplicationComponent" name="FHIR data transform &amp; load" id="id-6e8ab145de734540a18395072fee6e54"/>
     <element xsi:type="archimate:ApplicationComponent" name="Analytics server (Jupyter)" id="id-65147c079d1d457f945ccfab4e0853d8"/>
     <element xsi:type="archimate:ApplicationComponent" name="Analytics workbench (notebook)" id="id-d295ec7d391b47e4aa6af11d417d89bb"/>
     <element xsi:type="archimate:ApplicationComponent" name="FHIR native app (OpenSRP)" id="id-9b17db97efc44b18bf2f59b6caa15cba"/>
+    <element xsi:type="archimate:DataObject" name="FHIR Resource" id="id-802a285539064feab8d107b042222993"/>
+    <element xsi:type="archimate:ApplicationInterface" name="FHIR Bulk API" id="id-a69ab31229e246c7b7e18b57ba03e29f"/>
+    <element xsi:type="archimate:ApplicationService" name="Ingesting" id="id-637710a2a58843408acec653887060e3"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Value Points Dashboard" id="id-9db6c2fffe994e0f9454976c830ff0ca"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Analytics workbench" id="id-43d5fa181f9643e0956a810464333016"/>
+    <element xsi:type="archimate:ApplicationInterface" name="Azure Cloud storage API" id="id-6de7663f7f3149d594ddb454636c413c"/>
+    <element xsi:type="archimate:ApplicationComponent" name="FHIRstation" id="id-ca81b112410648499e5b7686e3832002"/>
+    <element xsi:type="archimate:ApplicationComponent" name="openMRS" id="id-34791d02d0e44ea3843ee3f27c108834">
+      <documentation>https://openmrs.org/
+</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="KenyaEMR" id="id-2e5c853b21794ec19d4b1f611cbae2a0"/>
+    <element xsi:type="archimate:ApplicationComponent" name="openSRP" id="id-c76bb02496df48aa89a2c1635b71c2e6">
+      <documentation>https://smartregister.org/</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="openHIM" id="id-52560df46e4e4392bf8fdd43c7fa9e5f"/>
+    <element xsi:type="archimate:ApplicationComponent" name="AfyaRekod" id="id-f7dacf8663b848149601cdba7915a42f"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Elephant" id="id-cd99a2007e9649b5903d80182759caf0"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Medtronic Spice" id="id-46982dc9ec304673ac8e92bdee90fa8e"/>
+    <element xsi:type="archimate:ApplicationService" name="Client Registry (CR)" id="id-deabc5f1335c405ab9748876294410e9">
+      <documentation>The identity of an individual who receives health services is crucial to enabling health care record sharing across institutions and systems. Yet, sharing health care records can be a challenge in a complex environment where there are multiple systems across multiple health care institutions and each institution and/or system has a different way to identify their clients. Even in environments where citizens are assigned national identification cards, there is a need to ensure the unique identity of an individual among the myriad fragmented information systems that collectively represent a person’s electronic health record. The Client Registry is designed to assist in uniquely identifying individuals who receive health care services by:
+
+- Maintaining a central registry of all patients and their demographics and assigning a unique identifier to each patient.
+- Linking patient registration entries that result due to changes in patient demographics (patient moved to another location), data entry errors during patient registration, or missing demographic information.
+- Enabling health care workers to identify facilities at which a patient has received care.
+
+More information:
+https://guides.ohie.org/arch-spec/openhie-component-specifications-1/client-registry</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Facility Registry (FR)" id="id-44e1869048224d0b9f839f5701ca68f9">
+      <documentation>The purpose of a health facility registry is to act as the central authority to collect, store, and distribute an up to date and standardized set of facility data.  The resulting standardized and current facility dataset stored in the registry is called the Master Facility List (MFL).  While these concepts are closely related, a facility registry can be understood as the technology that manages and shares facility data and an MFL is the standardized data stored in the tool.
+
+https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-facility-registry-fr</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Health Worker Registry (HWR)" id="id-792a1e0d26a143c2a3da4180cccdd058">
+      <documentation>The Health Worker Registry serves as the central authority for maintaining the unique identities of health workers within a country. The Health Worker Registry is a database containing a minimum dataset of details of all health workers working in both the public and private sectors. With multiple and disparate sources of data on health workers, it is a complex task to pull together and maintain a master and canonical list of all health workers in a country. The health worker registry seeks to reduce the complexity of this task by:
+
+- Pulling the minimum dataset of health workforce information from the various source data systems. 
+- Merging the source data systems into an authoritative registry of health workers according to a data governance policy. 
+- Allowing queries of health worker information by client systems.
+
+https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-health-worker-registry-hwr</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Terminology Services (TS)" id="id-9d3be277140640e39586e3a9c71c6f8e">
+      <documentation>The Terminology Services component of the OpenHIE Architecture provides a centralized source for the HIE’s standards and definitions, including terminologies, ontologies, dictionaries, code systems, and value sets.  Other HIE components can use these standards and definitions to normalize clinical data and achieve consistent aggregation and reporting.
+
+By using Terminology Services, an HIE can achieve semantic interoperability of its data. Semantic interoperability (or interoperability of meaning) enables accurate, consistent reporting and aggregation of clinical data. It also enables accurate exchange of information among members of the provider community, including labs, clinics, pharmacies, hospitals and imaging centers, which leads to improved patient care decisions.
+Benefits of the use of a Terminology Service include:
+
+- Standard Data: Using common terminology is vital for knowledge sharing over multiple locations. National and international code systems and value sets should be readily available for validation, comparison, and aggregation with local data.
+- Improved Care: Accurate and consistent data collection improves patient care analysis. Comparable patient data within and between patient populations leads to more consistent care delivery.
+- Better Reporting: Standardized data element representations result in consistent and accurate reporting.
+- Coordinated Care: Consistent and comparable analysis of healthcare utilization data leads to more informed decisions about resource allocation.
+
+https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-terminology-service-ts</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Shared Health Record (SHR)" id="id-f87cbe6f614e4b009d06ca47b28e433b">
+      <documentation>The Shared Health Record (SHR) facilitates the sharing of clinical information between health information systems to enable better patient care, thus improving health outcomes.  The Shared Health Record is a means of allowing different services to share health data stored in a centralized data repository.  It contains a subset of normalized data for a patient from various systems such as an electronic medical record or the Laboratory Information Management System. This record is queried and updated between the different institutions and systems that are authorized to do so.  The Shared Health Record is distinct from a data warehouse; it is an operational, real-time transactional data source.
+A shared health record is normalised if all metadata items such as patient, provider, and facility identifiers are resolved to appropriate universal identifiers (as opposed to their local identifiers as used by a client system). In addition, all terminology codes in use need to be mapped to an appropriate reference terminology to ensure that the information is consistently understood.
+
+https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-shared-health-record-shr</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Logistics Management Information System (LMIS)" id="id-27b02fcc0cc3453093c3aaa398304048">
+      <documentation>A Logistics Management Information System (LMIS) is an IT system that plays a central role in enabling commodity visibility and operational management of a wide-area supply chain operations. Typically the commodities in this supply chain are health-related, with the organization that sponsors the system a department or agency under a government's health ministry, and the operation is carried out at scale for an entire region or even an entire nation. An LMIS typically bridges the health and supply chain operations by enabling re-supply workflows for clinical locations and the vertical programs targeting families of commodities, as well as interfacing with supplier's IT systems to ensure the re-supply process is fulfilled as needed.  Particular LMIS tools may have additional capabilities that enhance these re-supply workflows and/or add to the maturity of the wider supply chain operations.
+
+https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-logistics-management-information-system-lmis</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Health Management Information System (HMIS)" id="id-e0594c81f9d34efa817105135b07656e">
+      <documentation>A Health Management Information System (HMIS), also called a Routine Health Information System, facilitates the collection of periodic health service delivery and public health indicators from a variety of information systems and the effective use of information at facility, district, and higher levels to help improve health care outcomes.
+
+https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-health-management-information-system-hmis</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Finance and Insurance Service (FIS)" id="id-ee0026ec47de4a3c91c042bed2590b2d">
+      <documentation>Finance and Insurance Service stores, categorizes, and facilitates the administration of centralised claims and finance related data to care provision to patients within the HIE. The service receives claims/financial data from Point of Service applications (including financing applications acting as a point of service interface outside of other PoS systems) and curates the management of them.
+
+https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-finance-and-insurance-service</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Dashboarding" id="id-8df448186fce44e2896e4cb4ba49c929">
+      <documentation>At various aggregation levels: national, county, programme. Comparable to generic business intelligence functionality of standard datawarehousing solutions.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Analytics Workbench" id="id-0d43328f95a4406e974887fb51c10dab"/>
+    <element xsi:type="archimate:ApplicationService" name="Expert &amp; Decision Support" id="id-8180c95d725a417c8f7acd2705f32146"/>
+    <element xsi:type="archimate:ApplicationService" name="Knowledge Repository Service" id="id-6ca95a6554ff42cc8834d330053a20e0"/>
   </folder>
   <folder name="Technology &amp; Physical" id="id-7a80257f116e4c72b45248525c268bc9" type="technology">
     <element xsi:type="archimate:Node" name="tablet" id="id-2d840145f23c492ca4c12069c0972139"/>
     <element xsi:type="archimate:Node" name="desktop" id="id-8f479b1fd8f340bdb697aec2c45437a8"/>
+    <element xsi:type="archimate:Artifact" name="FHIR bulk ndjson" id="id-6ec1e206767942f79c39087db12b675a"/>
+    <element xsi:type="archimate:Artifact" name="DuckDB database file" id="id-4fbfe9f43b9e40178bcf8231ecc7fe61"/>
   </folder>
   <folder name="Motivation" id="id-b69999bf1ddc4534b305b69e703edb6d" type="motivation"/>
   <folder name="Implementation &amp; Migration" id="id-712626af517942539726b803b35ea4d4" type="implementation_migration"/>
   <folder name="Other" id="id-18bde492a0194eb9a436b9a96e829285" type="other">
     <element xsi:type="archimate:Grouping" name="Clinic" id="id-8e520e00527a46489f13e667bbc1f4ba"/>
     <element xsi:type="archimate:Grouping" name="DataCare" id="id-cd6af3cec437487eafbbaa1371c0d6e0"/>
+    <element xsi:type="archimate:Grouping" name="Registry Services" id="id-3ae8b29677e340cf852a8134ffab386d"/>
+    <element xsi:type="archimate:Grouping" name="Business Services" id="id-939d5c97d99f4090be4057438f28b2f1"/>
+    <element xsi:type="archimate:Grouping" name="Analytics Services" id="id-cb22f742969b40d4a97970fef0d458bc"/>
+    <element xsi:type="archimate:Grouping" name="Interoperability Layer" id="id-842e9c27279a48bfa4cee54c4cdce073"/>
+    <element xsi:type="archimate:Grouping" name="Point of Service" id="id-85b0365f479d405aabc93ac08d580a52"/>
   </folder>
   <folder name="Relations" id="id-8dd70376c36446d1885f3298c24983eb" type="relations">
     <element xsi:type="archimate:AssociationRelationship" name="1..1" id="id-5306c19b514147999994fc258febacab" source="id-598f32f7932e4abaa35f1d846ec70b32" target="id-a25435903f4c4c28acc8be2cd451ae46" directed="true"/>
@@ -130,8 +273,53 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
     <element xsi:type="archimate:AssociationRelationship" id="id-0ade79b017b5410093c62c2fd346219b" source="id-65147c079d1d457f945ccfab4e0853d8" target="id-d295ec7d391b47e4aa6af11d417d89bb"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-ac43f1fb0b164ca7a38f2e476413f657" source="id-2d840145f23c492ca4c12069c0972139" target="id-9b17db97efc44b18bf2f59b6caa15cba"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-e7940186345043c786f6ed40f4dd4683" source="id-9b17db97efc44b18bf2f59b6caa15cba" target="id-83d1a8c7b3fb4cd18c77c8c075b83e35"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-631542b604014bec8d314b5855995e09" source="id-6ec1e206767942f79c39087db12b675a" target="id-802a285539064feab8d107b042222993"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-bacb063e78584b8ab8be9c0091f5298d" source="id-a69ab31229e246c7b7e18b57ba03e29f" target="id-802a285539064feab8d107b042222993"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-bced5b851beb49bea6f6ea603bcd5196" source="id-6de7663f7f3149d594ddb454636c413c" target="id-9db6c2fffe994e0f9454976c830ff0ca"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-59a40e22efa3446b9fb21d16e7221ca4" source="id-6de7663f7f3149d594ddb454636c413c" target="id-43d5fa181f9643e0956a810464333016"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-d3bcd20f24be46ba848635d8cc84bab6" source="id-6de7663f7f3149d594ddb454636c413c" target="id-4fbfe9f43b9e40178bcf8231ecc7fe61" accessType="3"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-ff415087b2004a4aa6b4a7755ab5d326" source="id-ca81b112410648499e5b7686e3832002" target="id-802a285539064feab8d107b042222993" accessType="1"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-ee4841598d694ee99258377d246c7b2f" source="id-6de7663f7f3149d594ddb454636c413c" target="id-ca81b112410648499e5b7686e3832002"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-2b68b975317d454b87b7e3bfd5a9c8c8" source="id-939d5c97d99f4090be4057438f28b2f1" target="id-2199d2c2f47f453cacb38dd03ce8a973"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-ef5dde10c4244058be707a8649c38bd1" source="id-842e9c27279a48bfa4cee54c4cdce073" target="id-adb28c3986c54f6c9d811e570f6645fb"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-eda366dbf9074cb5b65a89083ff2858a" source="id-842e9c27279a48bfa4cee54c4cdce073" target="id-9bf578fef2204821823c9e3e0428db9e"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-8bd3a27d938f49e4a15484b9b4726e33" source="id-842e9c27279a48bfa4cee54c4cdce073" target="id-a641a07904a6416f83f0a6ab75422f18"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-78da67931d19443eb1ab2f6588d70b79" source="id-842e9c27279a48bfa4cee54c4cdce073" target="id-09539d8bfb3d48c69d1c92c36bc83c4c"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-e19a5cb500c943a28c6027fe049c09e2" source="id-85b0365f479d405aabc93ac08d580a52" target="id-5f192107c9574f1da3f20a1d7fdddcf6"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-b51e5431347448ca8c8cf4f60732c20e" source="id-85b0365f479d405aabc93ac08d580a52" target="id-4342360ad9154175be9ab0a8a558ebc5"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-27a634f1f12a41dbb924ec5451e0c36e" source="id-85b0365f479d405aabc93ac08d580a52" target="id-3841047f643d4623a10eced1060453d3"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-80d4ed8a929546b6b5e90f34be2f9763" source="id-85b0365f479d405aabc93ac08d580a52" target="id-1522d20aad6a44e8ac4199cdb2c1db84"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-8b8ea03d03304ee195a775517e4d3000" source="id-1522d20aad6a44e8ac4199cdb2c1db84" target="id-ddad3c9e7bd8498a91d83610fe1b7395"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-6bf9ef3b01884ffdab0e510f9377fedf" source="id-5f192107c9574f1da3f20a1d7fdddcf6" target="id-cb40812219e5441e9f20fa451e4e7578"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-d9a880c7f3da40ba913683b43af66d5d" source="id-4342360ad9154175be9ab0a8a558ebc5" target="id-af2a7e167f81420cb15a8ffd5feed28c"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-08f53f344a8742028abd98366bc3c868" source="id-d609b137cc8942dea9c914a979256105" target="id-8b2e3148fb9a4ed9b28b93db277b33ac"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-a0eed588340445419b1baf634c4c001d" source="id-34791d02d0e44ea3843ee3f27c108834" target="id-4342360ad9154175be9ab0a8a558ebc5"/>
+    <element xsi:type="archimate:SpecializationRelationship" id="id-b3f7b668373648568443c8493a2d2849" source="id-2e5c853b21794ec19d4b1f611cbae2a0" target="id-34791d02d0e44ea3843ee3f27c108834"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f26993ed49cc452c91c2f7c6343a7222" source="id-c76bb02496df48aa89a2c1635b71c2e6" target="id-5f192107c9574f1da3f20a1d7fdddcf6"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-bdeb0eeb946d44cda16b264c05ad5599" source="id-c76bb02496df48aa89a2c1635b71c2e6" target="id-d609b137cc8942dea9c914a979256105"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-9326c92618eb406f8efdb291913ce474" source="id-c76bb02496df48aa89a2c1635b71c2e6" target="id-1522d20aad6a44e8ac4199cdb2c1db84"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-9da2ba670524445e8730133057e5f7e8" source="id-52560df46e4e4392bf8fdd43c7fa9e5f" target="id-842e9c27279a48bfa4cee54c4cdce073"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-d779f687dda8418895df606ad481c2a7" source="id-cd99a2007e9649b5903d80182759caf0" target="id-4342360ad9154175be9ab0a8a558ebc5"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-a3fa8d30ff774af1afc40c6997391797" source="id-f7dacf8663b848149601cdba7915a42f" target="id-4342360ad9154175be9ab0a8a558ebc5"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-130f345411a244cd8896cb62ac6545df" source="id-46982dc9ec304673ac8e92bdee90fa8e" target="id-1522d20aad6a44e8ac4199cdb2c1db84"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-a977e01ce7cd40779aab84188394e3c6" source="id-5f192107c9574f1da3f20a1d7fdddcf6" target="id-c55181f4dbfb4459a483c0575bcc6e2c"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-60adf234b29d44abb5c9608982d33dcc" source="id-3ae8b29677e340cf852a8134ffab386d" target="id-deabc5f1335c405ab9748876294410e9"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-4e58856de19f4421bd0a996498b8d13b" source="id-3ae8b29677e340cf852a8134ffab386d" target="id-44e1869048224d0b9f839f5701ca68f9"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-b2bc1f91a80340dcaaf0c570de30cc8d" source="id-3ae8b29677e340cf852a8134ffab386d" target="id-792a1e0d26a143c2a3da4180cccdd058"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-98e95e0efb9145df835fe91e00d94024" source="id-3ae8b29677e340cf852a8134ffab386d" target="id-9d3be277140640e39586e3a9c71c6f8e"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-fe9ea61e2cfa4eaa8a18f33427e95a96" source="id-939d5c97d99f4090be4057438f28b2f1" target="id-f87cbe6f614e4b009d06ca47b28e433b"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-5f3f4c601be043cd820675e96307518a" source="id-939d5c97d99f4090be4057438f28b2f1" target="id-27b02fcc0cc3453093c3aaa398304048"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-245906579cf745f09a4f47f6ce7a3aa8" source="id-939d5c97d99f4090be4057438f28b2f1" target="id-e0594c81f9d34efa817105135b07656e"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-75bf4f925b1647a7b4008a625459843d" source="id-939d5c97d99f4090be4057438f28b2f1" target="id-ee0026ec47de4a3c91c042bed2590b2d"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-7018b9d5eb8f432983c2ca085ca6c40e" source="id-cb22f742969b40d4a97970fef0d458bc" target="id-8df448186fce44e2896e4cb4ba49c929"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-1a2221b636a74fa7b543334d984ae508" source="id-cb22f742969b40d4a97970fef0d458bc" target="id-0d43328f95a4406e974887fb51c10dab"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-e752330459d34ac29984f961f3b250b0" source="id-cb22f742969b40d4a97970fef0d458bc" target="id-8180c95d725a417c8f7acd2705f32146"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-362a911be7b34bacb93411ca19e724c1" source="id-cb22f742969b40d4a97970fef0d458bc" target="id-6ca95a6554ff42cc8834d330053a20e0"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-21a84e899a2740229971ec28c4ca0365" source="id-cb22f742969b40d4a97970fef0d458bc" target="id-78b06b23ac7744bdb6989877d5ca49db"/>
   </folder>
   <folder name="Views" id="id-8f8b54a5ea8445a1996c48efa7af5b50" type="diagrams">
+    <folder name="MomCare" id="id-39f808832188456c8f45b79607182ffa"/>
+    <folder name="DataCare" id="id-352b3c71d3b54df282d3ffdcbbb9a0b5"/>
     <element xsi:type="archimate:ArchimateDiagramModel" name="Conceptual data model" id="id-31092f1339da4108a52df9ad5f90e146" viewpoint="information_structure">
       <child xsi:type="archimate:Group" id="id-a5496bd794b1404280d8457312928838" name="Medication domain" textAlignment="1">
         <bounds x="264" y="324" width="373" height="193"/>
@@ -212,7 +400,7 @@ This is a record of a medication being taken by a patient or that a medication h
       <child xsi:type="archimate:DiagramObject" id="id-24967c83907f43cb812db17de60ce7df" targetConnections="id-6e32144f6ff3432eaa634a8b499982d3" archimateElement="id-c3860e8a35284667a1a920c73d34f566">
         <bounds x="108" y="-1" width="120" height="55"/>
       </child>
-      <documentation>The conceptual model of DataCare is based on FHIR Resources v4.3.0. Our aim is to implement a detailed FHIR profile which can be used in all African countries.
+      <documentation>The conceptual model of DataCare is based on FHIR Resources v4.0.1 Our aim is to implement a detailed FHIR profile which can be used in all African countries.
 
 By default, base FHIR resources are used. Pregnancies are captured as Observations, following the FHIR International Patient Summary (IPS) standard (https://build.fhir.org/ig/HL7/fhir-ips/index.html).
 
@@ -331,6 +519,258 @@ Derby or PostgreSQL as FHIR database
 https://hapifhir.io/hapi-fhir/docs/server_jpa/architecture.html
 
 Data from CoT MySQL database is transformed with Python CLI transformer is specifically developed for this demonstrator. </documentation>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="OpenHIE framework" id="id-a6894e08a37d42d185c4baa937482e15">
+      <child xsi:type="archimate:DiagramObject" id="id-d4a12cca9dee4de88337241cf5cf6070" textAlignment="1" archimateElement="id-842e9c27279a48bfa4cee54c4cdce073">
+        <bounds x="60" y="324" width="805" height="109"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-b073df23740d4949b2513cf458aac031" source="id-d4a12cca9dee4de88337241cf5cf6070" target="id-05a87fb542984f83af4c19be2ae1af7d" archimateRelationship="id-78da67931d19443eb1ab2f6588d70b79"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-e62646ee91fb4ef8bb1dd477bd9c82f0" source="id-d4a12cca9dee4de88337241cf5cf6070" target="id-820ef6c7750f42d9a487b8346134878c" archimateRelationship="id-ef5dde10c4244058be707a8649c38bd1"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-1c2e2dc78a8940899f30b2da9f1fa7b5" source="id-d4a12cca9dee4de88337241cf5cf6070" target="id-711d03dab7814e0194b6bf2b2d8ea45d" archimateRelationship="id-8bd3a27d938f49e4a15484b9b4726e33"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-11d0e0b5a787422e820060c389183c6f" source="id-d4a12cca9dee4de88337241cf5cf6070" target="id-b3c7d49f8ecb4a58b0fe0b7aa8c7e098" archimateRelationship="id-eda366dbf9074cb5b65a89083ff2858a"/>
+        <child xsi:type="archimate:DiagramObject" id="id-820ef6c7750f42d9a487b8346134878c" targetConnections="id-e62646ee91fb4ef8bb1dd477bd9c82f0" archimateElement="id-adb28c3986c54f6c9d811e570f6645fb">
+          <bounds x="24" y="36" width="144" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-711d03dab7814e0194b6bf2b2d8ea45d" targetConnections="id-1c2e2dc78a8940899f30b2da9f1fa7b5" archimateElement="id-a641a07904a6416f83f0a6ab75422f18">
+          <bounds x="372" y="36" width="169" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-05a87fb542984f83af4c19be2ae1af7d" targetConnections="id-b073df23740d4949b2513cf458aac031" archimateElement="id-09539d8bfb3d48c69d1c92c36bc83c4c">
+          <bounds x="588" y="36" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-b3c7d49f8ecb4a58b0fe0b7aa8c7e098" targetConnections="id-11d0e0b5a787422e820060c389183c6f" archimateElement="id-9bf578fef2204821823c9e3e0428db9e">
+          <bounds x="216" y="36" width="120" height="55"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-d0a3b2586b02488880fb4d243e8ddedb" textAlignment="1" archimateElement="id-939d5c97d99f4090be4057438f28b2f1">
+        <bounds x="300" y="-24" width="218" height="313"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-c276dffdd1ed4678ba5b58324fdda100" source="id-d0a3b2586b02488880fb4d243e8ddedb" target="id-8c01d30e8f9e49a5a36f17eb8099bad0" archimateRelationship="id-fe9ea61e2cfa4eaa8a18f33427e95a96"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-fde03b280dbf401b87ad66bac958d5f2" source="id-d0a3b2586b02488880fb4d243e8ddedb" target="id-1fbec20dc7e2433f8aba6508ddc8837e" archimateRelationship="id-5f3f4c601be043cd820675e96307518a"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-b30f8100c3ea44d2b4b3d4ac8831f903" source="id-d0a3b2586b02488880fb4d243e8ddedb" target="id-dd980b7cecc542f3841be56040c6ed3b" archimateRelationship="id-245906579cf745f09a4f47f6ce7a3aa8"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-21ef01236e9845188b74fc67fca544bc" source="id-d0a3b2586b02488880fb4d243e8ddedb" target="id-99b4eb9a05f44d4f9252a16ec93a01a9" archimateRelationship="id-75bf4f925b1647a7b4008a625459843d"/>
+        <child xsi:type="archimate:DiagramObject" id="id-8c01d30e8f9e49a5a36f17eb8099bad0" targetConnections="id-c276dffdd1ed4678ba5b58324fdda100" archimateElement="id-f87cbe6f614e4b009d06ca47b28e433b">
+          <bounds x="48" y="36" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-1fbec20dc7e2433f8aba6508ddc8837e" targetConnections="id-fde03b280dbf401b87ad66bac958d5f2" archimateElement="id-27b02fcc0cc3453093c3aaa398304048">
+          <bounds x="48" y="108" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-dd980b7cecc542f3841be56040c6ed3b" targetConnections="id-b30f8100c3ea44d2b4b3d4ac8831f903" archimateElement="id-e0594c81f9d34efa817105135b07656e">
+          <bounds x="48" y="180" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-99b4eb9a05f44d4f9252a16ec93a01a9" targetConnections="id-21ef01236e9845188b74fc67fca544bc" archimateElement="id-ee0026ec47de4a3c91c042bed2590b2d">
+          <bounds x="48" y="252" width="120" height="55"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-9e657c902bd94eec9333832491d49953" textAlignment="1" archimateElement="id-3ae8b29677e340cf852a8134ffab386d">
+        <bounds x="60" y="-24" width="193" height="313"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-ab69153394cc40dc809949a25498cfeb" source="id-9e657c902bd94eec9333832491d49953" target="id-29eaef09d4c54035808840adb2a5dc8d" archimateRelationship="id-60adf234b29d44abb5c9608982d33dcc"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-e25a328f83e14cf0aab37841432a811e" source="id-9e657c902bd94eec9333832491d49953" target="id-6bbef982dca541dd9c51da85d6d5a34e" archimateRelationship="id-4e58856de19f4421bd0a996498b8d13b"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-367a37a7b7fa4b089dd45f750f3ed439" source="id-9e657c902bd94eec9333832491d49953" target="id-da6070b7342d48909f5d3bc246b108e2" archimateRelationship="id-b2bc1f91a80340dcaaf0c570de30cc8d"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-06e058a067d14d5c854dadae19c50d25" source="id-9e657c902bd94eec9333832491d49953" target="id-bbaeb4578d954e7ba6d265d864a72161" archimateRelationship="id-98e95e0efb9145df835fe91e00d94024"/>
+        <child xsi:type="archimate:DiagramObject" id="id-29eaef09d4c54035808840adb2a5dc8d" targetConnections="id-ab69153394cc40dc809949a25498cfeb" archimateElement="id-deabc5f1335c405ab9748876294410e9">
+          <bounds x="36" y="36" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-6bbef982dca541dd9c51da85d6d5a34e" targetConnections="id-e25a328f83e14cf0aab37841432a811e" archimateElement="id-44e1869048224d0b9f839f5701ca68f9">
+          <bounds x="36" y="108" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-da6070b7342d48909f5d3bc246b108e2" targetConnections="id-367a37a7b7fa4b089dd45f750f3ed439" archimateElement="id-792a1e0d26a143c2a3da4180cccdd058">
+          <bounds x="36" y="180" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-bbaeb4578d954e7ba6d265d864a72161" targetConnections="id-06e058a067d14d5c854dadae19c50d25" archimateElement="id-9d3be277140640e39586e3a9c71c6f8e">
+          <bounds x="36" y="252" width="120" height="55"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-3747c3def9fc45e6a7bb71217d8ed1a0" textAlignment="1" archimateElement="id-cb22f742969b40d4a97970fef0d458bc">
+        <bounds x="540" y="-24" width="325" height="313"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-e023ef5cd0314c948390e4d674cbe524" source="id-3747c3def9fc45e6a7bb71217d8ed1a0" target="id-75a6da57b32d4605bda8ee7809accc14" archimateRelationship="id-7018b9d5eb8f432983c2ca085ca6c40e"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-e2145f4c1aec490fba84d4475c98001b" source="id-3747c3def9fc45e6a7bb71217d8ed1a0" target="id-8930136dcd544b89b953f66942c4154a" archimateRelationship="id-1a2221b636a74fa7b543334d984ae508"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-a399e86871c84056a62525dea80726bc" source="id-3747c3def9fc45e6a7bb71217d8ed1a0" target="id-0033fea1e5f44a44b98c69bc82a57f5e" archimateRelationship="id-e752330459d34ac29984f961f3b250b0"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-2c5e74759233420db150b3cfccc1ab27" source="id-3747c3def9fc45e6a7bb71217d8ed1a0" target="id-1158ac7efe56402fbf0ece6d9d0959cc" archimateRelationship="id-362a911be7b34bacb93411ca19e724c1"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-e8f1705257c24aefa3554a27f644f8ac" source="id-3747c3def9fc45e6a7bb71217d8ed1a0" target="id-5b9960cf1cf2428fb5f9490f0246086c" archimateRelationship="id-21a84e899a2740229971ec28c4ca0365"/>
+        <child xsi:type="archimate:DiagramObject" id="id-75a6da57b32d4605bda8ee7809accc14" targetConnections="id-e023ef5cd0314c948390e4d674cbe524" archimateElement="id-8df448186fce44e2896e4cb4ba49c929">
+          <bounds x="24" y="108" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-8930136dcd544b89b953f66942c4154a" targetConnections="id-e2145f4c1aec490fba84d4475c98001b" archimateElement="id-0d43328f95a4406e974887fb51c10dab">
+          <bounds x="24" y="36" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-0033fea1e5f44a44b98c69bc82a57f5e" targetConnections="id-a399e86871c84056a62525dea80726bc" archimateElement="id-8180c95d725a417c8f7acd2705f32146">
+          <bounds x="179" y="36" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-1158ac7efe56402fbf0ece6d9d0959cc" targetConnections="id-2c5e74759233420db150b3cfccc1ab27" archimateElement="id-6ca95a6554ff42cc8834d330053a20e0">
+          <bounds x="179" y="108" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-5b9960cf1cf2428fb5f9490f0246086c" targetConnections="id-e8f1705257c24aefa3554a27f644f8ac" archimateElement="id-78b06b23ac7744bdb6989877d5ca49db">
+          <bounds x="116" y="250" width="120" height="55"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-8bc867c51bf1474986e3866afb06d156" textAlignment="1" archimateElement="id-85b0365f479d405aabc93ac08d580a52">
+        <bounds x="60" y="468" width="805" height="140"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-dfeda78546554c8a895527a3dd1125e7" source="id-8bc867c51bf1474986e3866afb06d156" target="id-b4475358299a4f20a9b50c36d1ae4a58" archimateRelationship="id-80d4ed8a929546b6b5e90f34be2f9763"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-08bb741361bc4348a57476b8c2a911bb" source="id-8bc867c51bf1474986e3866afb06d156" target="id-a5416554d3494e43a4d0d251bd9393ef" archimateRelationship="id-e19a5cb500c943a28c6027fe049c09e2"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-4718a8f1777e46aba935fb59a420c0b6" source="id-8bc867c51bf1474986e3866afb06d156" target="id-7ab042b204564639ab8b25a6c48373a6" archimateRelationship="id-b51e5431347448ca8c8cf4f60732c20e"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-e4159768ba854660987350b7f6b8f11b" source="id-8bc867c51bf1474986e3866afb06d156" target="id-87ca5b636fbd4b4785349055fb203734" archimateRelationship="id-27a634f1f12a41dbb924ec5451e0c36e"/>
+        <child xsi:type="archimate:DiagramObject" id="id-a5416554d3494e43a4d0d251bd9393ef" targetConnections="id-08bb741361bc4348a57476b8c2a911bb" archimateElement="id-5f192107c9574f1da3f20a1d7fdddcf6">
+          <bounds x="24" y="48" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-7ab042b204564639ab8b25a6c48373a6" targetConnections="id-4718a8f1777e46aba935fb59a420c0b6" archimateElement="id-4342360ad9154175be9ab0a8a558ebc5">
+          <bounds x="180" y="48" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-87ca5b636fbd4b4785349055fb203734" targetConnections="id-e4159768ba854660987350b7f6b8f11b" archimateElement="id-3841047f643d4623a10eced1060453d3">
+          <bounds x="324" y="48" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-b4475358299a4f20a9b50c36d1ae4a58" targetConnections="id-dfeda78546554c8a895527a3dd1125e7" archimateElement="id-1522d20aad6a44e8ac4199cdb2c1db84">
+          <bounds x="468" y="48" width="120" height="55"/>
+        </child>
+      </child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Personas &amp; Point of Service - chronic" id="id-fa7458052c4f4a6ba086b3d2cd7d1ad2">
+      <child xsi:type="archimate:DiagramObject" id="id-a7ee3756e8024c9ab711c4d0d3488d5e" targetConnections="id-1679ca72d2e34f4ba514a49c45f407e5" archimateElement="id-cb40812219e5441e9f20fa451e4e7578">
+        <bounds x="132" y="132" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-c17999359f43480ab2ba7572d58094e7" targetConnections="id-dc321b73c7eb4152986e65eb03c7732a" archimateElement="id-af2a7e167f81420cb15a8ffd5feed28c">
+        <bounds x="132" y="456" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-058686e27d6d40a681decca57729a94e" targetConnections="id-c069972997f34142af41f97c412a56dc" archimateElement="id-ddad3c9e7bd8498a91d83610fe1b7395">
+        <bounds x="132" y="300" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-f61d498c16c441d6b0d1979b02a17369" targetConnections="id-b56a5c46e0cf48319808cdcfab02b6cb" archimateElement="id-8b2e3148fb9a4ed9b28b93db277b33ac">
+        <bounds x="132" y="216" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-8476dd2c1775420d8b8fca3bd9781533" targetConnections="id-d03580f700d04b0faf313de1b81d66d9" archimateElement="id-1522d20aad6a44e8ac4199cdb2c1db84">
+        <bounds x="396" y="300" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-c069972997f34142af41f97c412a56dc" source="id-8476dd2c1775420d8b8fca3bd9781533" target="id-058686e27d6d40a681decca57729a94e" archimateRelationship="id-8b8ea03d03304ee195a775517e4d3000"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-a3afdec43f1f4c32b806d716fb441188" targetConnections="id-54787cf45e1d4250916c5076e348e6d7 id-71d99162307840fa9efb531367101f56 id-bdde4015ec7a4bd7b7a5611b733940f7" archimateElement="id-4342360ad9154175be9ab0a8a558ebc5">
+        <bounds x="396" y="456" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-dc321b73c7eb4152986e65eb03c7732a" source="id-a3afdec43f1f4c32b806d716fb441188" target="id-c17999359f43480ab2ba7572d58094e7" archimateRelationship="id-d9a880c7f3da40ba913683b43af66d5d"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-81410a1163124505bcbee3edc1d44dc3" targetConnections="id-be6cc9226bf6433192bfe7c38acd0f10" archimateElement="id-5f192107c9574f1da3f20a1d7fdddcf6">
+        <bounds x="396" y="132" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-1679ca72d2e34f4ba514a49c45f407e5" source="id-81410a1163124505bcbee3edc1d44dc3" target="id-a7ee3756e8024c9ab711c4d0d3488d5e" archimateRelationship="id-6bf9ef3b01884ffdab0e510f9377fedf"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-3033817cc84b43d6a562f01580059233" targetConnections="id-d969cb7dfc7545d9bebe31b1a54d1d94" archimateElement="id-d609b137cc8942dea9c914a979256105">
+        <bounds x="396" y="216" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-b56a5c46e0cf48319808cdcfab02b6cb" source="id-3033817cc84b43d6a562f01580059233" target="id-f61d498c16c441d6b0d1979b02a17369" archimateRelationship="id-08f53f344a8742028abd98366bc3c868"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-ba52d39ce77841f5b8390a67cca01caf" targetConnections="id-28c797e4fa2c4c999409f393b43e09a6" archimateElement="id-34791d02d0e44ea3843ee3f27c108834">
+        <bounds x="696" y="456" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-54787cf45e1d4250916c5076e348e6d7" source="id-ba52d39ce77841f5b8390a67cca01caf" target="id-a3afdec43f1f4c32b806d716fb441188" archimateRelationship="id-a0eed588340445419b1baf634c4c001d"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-48cfc1df7d794317b275eea29521cdfd" archimateElement="id-2e5c853b21794ec19d4b1f611cbae2a0">
+        <bounds x="960" y="456" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-28c797e4fa2c4c999409f393b43e09a6" source="id-48cfc1df7d794317b275eea29521cdfd" target="id-ba52d39ce77841f5b8390a67cca01caf" archimateRelationship="id-b3f7b668373648568443c8493a2d2849"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-0a3e3087462a4abf83bfa846ac4f3ed7" archimateElement="id-c76bb02496df48aa89a2c1635b71c2e6">
+        <bounds x="696" y="132" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-d03580f700d04b0faf313de1b81d66d9" source="id-0a3e3087462a4abf83bfa846ac4f3ed7" target="id-8476dd2c1775420d8b8fca3bd9781533" archimateRelationship="id-9326c92618eb406f8efdb291913ce474"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-be6cc9226bf6433192bfe7c38acd0f10" source="id-0a3e3087462a4abf83bfa846ac4f3ed7" target="id-81410a1163124505bcbee3edc1d44dc3" archimateRelationship="id-f26993ed49cc452c91c2f7c6343a7222"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-d969cb7dfc7545d9bebe31b1a54d1d94" source="id-0a3e3087462a4abf83bfa846ac4f3ed7" target="id-3033817cc84b43d6a562f01580059233" archimateRelationship="id-bdeb0eeb946d44cda16b264c05ad5599"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-3dacdf3235124e8784460fc1b6be330f" targetConnections="id-40037c24b9d540569ab7979325546f93" textAlignment="1" archimateElement="id-842e9c27279a48bfa4cee54c4cdce073">
+        <bounds x="132" y="564" width="120" height="64"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-883240877cf643eb8cb54028532d3f1f" archimateElement="id-52560df46e4e4392bf8fdd43c7fa9e5f">
+        <bounds x="396" y="573" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-40037c24b9d540569ab7979325546f93" source="id-883240877cf643eb8cb54028532d3f1f" target="id-3dacdf3235124e8784460fc1b6be330f" archimateRelationship="id-9da2ba670524445e8730133057e5f7e8"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-44ffca5e980c4549aba2bfd89370fc3c" archimateElement="id-f7dacf8663b848149601cdba7915a42f">
+        <bounds x="696" y="396" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-bdde4015ec7a4bd7b7a5611b733940f7" source="id-44ffca5e980c4549aba2bfd89370fc3c" target="id-a3afdec43f1f4c32b806d716fb441188" archimateRelationship="id-a3fa8d30ff774af1afc40c6997391797"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-641a8618c71747dfa3ebc666d1c2bedf" archimateElement="id-cd99a2007e9649b5903d80182759caf0">
+        <bounds x="696" y="336" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-71d99162307840fa9efb531367101f56" source="id-641a8618c71747dfa3ebc666d1c2bedf" target="id-a3afdec43f1f4c32b806d716fb441188" archimateRelationship="id-d779f687dda8418895df606ad481c2a7"/>
+      </child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Personas &amp; Point of Service - generic (copy)" id="id-4eed3132de2948bc8ac8f9665bc12d4c">
+      <child xsi:type="archimate:DiagramObject" id="id-95470e1402f94155ab49fe4d6ca5d117" targetConnections="id-2aeacf0d5e5e437da733c867a48661f9" archimateElement="id-cb40812219e5441e9f20fa451e4e7578">
+        <bounds x="180" y="396" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-a005ed8f2a8641b0b44664e159d0c29d" targetConnections="id-2a088643845e40fc8b0fda24b9ed4a67" archimateElement="id-af2a7e167f81420cb15a8ffd5feed28c">
+        <bounds x="1164" y="396" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-856cbb6f9d0a491f8a85b2b3d74be422" targetConnections="id-d0940377a23740a9b7ece3711b096e0b" archimateElement="id-ddad3c9e7bd8498a91d83610fe1b7395">
+        <bounds x="721" y="396" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-43e2dd06cc31447f9e32345921be0190" targetConnections="id-2ee78d4af3cb476fb29b5950fba76e42" archimateElement="id-8b2e3148fb9a4ed9b28b93db277b33ac">
+        <bounds x="564" y="396" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-dccdc05f93e448ea8a2cfebefcd64140" archimateElement="id-1522d20aad6a44e8ac4199cdb2c1db84">
+        <bounds x="721" y="312" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-d0940377a23740a9b7ece3711b096e0b" source="id-dccdc05f93e448ea8a2cfebefcd64140" target="id-856cbb6f9d0a491f8a85b2b3d74be422" archimateRelationship="id-8b8ea03d03304ee195a775517e4d3000"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-758fe92ca5c448a3a64b13f668c607c8" archimateElement="id-4342360ad9154175be9ab0a8a558ebc5">
+        <bounds x="1164" y="312" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-2a088643845e40fc8b0fda24b9ed4a67" source="id-758fe92ca5c448a3a64b13f668c607c8" target="id-a005ed8f2a8641b0b44664e159d0c29d" archimateRelationship="id-d9a880c7f3da40ba913683b43af66d5d"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-ba9aa538742f4f2396939424283bcdc2" archimateElement="id-5f192107c9574f1da3f20a1d7fdddcf6">
+        <bounds x="180" y="312" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-c93d59974db74847ac6c3f834fc8f7f9" source="id-ba9aa538742f4f2396939424283bcdc2" target="id-5d9ce16a02804318a9ddea08f2c5a195" archimateRelationship="id-a977e01ce7cd40779aab84188394e3c6">
+          <bendpoint startX="-132" startY="-3" endX="-828" endY="-87"/>
+          <bendpoint startX="-132" startY="189" endX="-828" endY="105"/>
+          <bendpoint startX="312" startY="189" endX="-384" endY="105"/>
+          <bendpoint startX="696" startY="189" endY="105"/>
+        </sourceConnection>
+        <sourceConnection xsi:type="archimate:Connection" id="id-2aeacf0d5e5e437da733c867a48661f9" source="id-ba9aa538742f4f2396939424283bcdc2" target="id-95470e1402f94155ab49fe4d6ca5d117" archimateRelationship="id-6bf9ef3b01884ffdab0e510f9377fedf"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-2f255bb107e6434f81dc5fd764c3d47c" archimateElement="id-d609b137cc8942dea9c914a979256105">
+        <bounds x="564" y="312" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-2ee78d4af3cb476fb29b5950fba76e42" source="id-2f255bb107e6434f81dc5fd764c3d47c" target="id-43e2dd06cc31447f9e32345921be0190" archimateRelationship="id-08f53f344a8742028abd98366bc3c868"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-800fa78a2f754be397594903b4620c0c" archimateElement="id-84360cc985b24213aca8362527eee371">
+        <bounds x="324" y="396" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-5d9ce16a02804318a9ddea08f2c5a195" targetConnections="id-c93d59974db74847ac6c3f834fc8f7f9" archimateElement="id-c55181f4dbfb4459a483c0575bcc6e2c">
+        <bounds x="876" y="396" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-459042cf7a4f4ef7a1e08b73c03b53b9" textAlignment="1" archimateElement="id-842e9c27279a48bfa4cee54c4cdce073">
+        <bounds x="108" y="96" width="1237" height="140"/>
+      </child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="OpenHIE overview" id="id-8e01cbb7f8384382b7a88c412c77f130">
+      <documentation>Links:
+https://guides.ohie.org/arch-spec/
+https://wiki.ohie.org/</documentation>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Data processing" id="id-212c8b3fb1e044f3a1ae45444dde3807">
+      <child xsi:type="archimate:Group" id="id-5e74cd8b637043768d8de48d2367acdc" name="end-user facing apps" textAlignment="1">
+        <bounds x="840" y="372" width="241" height="253"/>
+        <child xsi:type="archimate:DiagramObject" id="id-f402cb8fb202455da99107fefc05cacd" targetConnections="id-45f600f8230b48548b7b246499cc87d4" archimateElement="id-9db6c2fffe994e0f9454976c830ff0ca">
+          <bounds x="60" y="60" width="120" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-b02ea66b51e743d4a60571221b08df2e" targetConnections="id-2b3f8dfdbcd442e390b853107a057a30" archimateElement="id-43d5fa181f9643e0956a810464333016">
+          <bounds x="60" y="144" width="120" height="55"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:Group" id="id-45fb69aecedc4976b39caeee1354c129" name="SQL-on-FHIR" textAlignment="1">
+        <bounds x="420" y="372" width="397" height="253"/>
+      </child>
+      <child xsi:type="archimate:Group" id="id-1149d0c2a4d34a5a8175cfcb3de248f7" name="source system" textAlignment="1">
+        <bounds x="24" y="372" width="373" height="253"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-6c5085c1ed6948b1a59a084c81027d42" targetConnections="id-15dc5d1a2a48482bbf3c08efa9671595 id-da045641949044eda6215eea3d7a43ce id-121c5d9bb90848a585fe56f5d01e7f17" archimateElement="id-802a285539064feab8d107b042222993">
+        <bounds x="243" y="431" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-4bede8edd75841da83df69a31c47c0c1" archimateElement="id-6ec1e206767942f79c39087db12b675a">
+        <bounds x="243" y="540" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-15dc5d1a2a48482bbf3c08efa9671595" source="id-4bede8edd75841da83df69a31c47c0c1" target="id-6c5085c1ed6948b1a59a084c81027d42" archimateRelationship="id-631542b604014bec8d314b5855995e09"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-0aee2d1586f74862b6635fb7e501a8f5" archimateElement="id-a69ab31229e246c7b7e18b57ba03e29f">
+        <bounds x="60" y="431" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-da045641949044eda6215eea3d7a43ce" source="id-0aee2d1586f74862b6635fb7e501a8f5" target="id-6c5085c1ed6948b1a59a084c81027d42" archimateRelationship="id-bacb063e78584b8ab8be9c0091f5298d"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-fd02cfd09e3f438fa230cb85bc26e4b1" targetConnections="id-6551f415a96249d4b66721995f4f8afb" archimateElement="id-4fbfe9f43b9e40178bcf8231ecc7fe61">
+        <bounds x="636" y="540" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-56a36e21262645df8617c96bf83cea42" archimateElement="id-6de7663f7f3149d594ddb454636c413c">
+        <bounds x="636" y="431" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-45f600f8230b48548b7b246499cc87d4" source="id-56a36e21262645df8617c96bf83cea42" target="id-f402cb8fb202455da99107fefc05cacd" archimateRelationship="id-bced5b851beb49bea6f6ea603bcd5196"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-2b3f8dfdbcd442e390b853107a057a30" source="id-56a36e21262645df8617c96bf83cea42" target="id-b02ea66b51e743d4a60571221b08df2e" archimateRelationship="id-59a40e22efa3446b9fb21d16e7221ca4"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-6551f415a96249d4b66721995f4f8afb" source="id-56a36e21262645df8617c96bf83cea42" target="id-fd02cfd09e3f438fa230cb85bc26e4b1" archimateRelationship="id-d3bcd20f24be46ba848635d8cc84bab6"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-19ed750fded64fa99a4f2e4bea75252f" source="id-56a36e21262645df8617c96bf83cea42" target="id-78b00036ae1a46d39309adad137a012d" archimateRelationship="id-ee4841598d694ee99258377d246c7b2f"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-78b00036ae1a46d39309adad137a012d" targetConnections="id-19ed750fded64fa99a4f2e4bea75252f" archimateElement="id-ca81b112410648499e5b7686e3832002">
+        <bounds x="456" y="431" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-121c5d9bb90848a585fe56f5d01e7f17" source="id-78b00036ae1a46d39309adad137a012d" target="id-6c5085c1ed6948b1a59a084c81027d42" archimateRelationship="id-ff415087b2004a4aa6b4a7755ab5d326"/>
+      </child>
     </element>
   </folder>
 </archimate:model>
