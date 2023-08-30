@@ -211,6 +211,12 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
     <element xsi:type="archimate:ApplicationComponent" name="Elephant" id="id-cd99a2007e9649b5903d80182759caf0"/>
     <element xsi:type="archimate:ApplicationComponent" name="Medtronic Spice" id="id-46982dc9ec304673ac8e92bdee90fa8e"/>
     <element xsi:type="archimate:ApplicationComponent" name="Bulk FHIR datastore" id="id-3875f665b2634d6fa17a20e17b7e26f2"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Community Health Toolkit" id="id-060ff3e1dd6e4505a491912521578d0c">
+      <documentation>https://communityhealthtoolkit.org/</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Bahmni" id="id-4561e55cc319423ba64587c3265a07ae">
+      <documentation>https://www.bahmni.org/</documentation>
+    </element>
   </folder>
   <folder name="Technology &amp; Physical" id="id-7a80257f116e4c72b45248525c268bc9" type="technology">
     <element xsi:type="archimate:Node" name="tablet" id="id-2d840145f23c492ca4c12069c0972139"/>
@@ -314,6 +320,10 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
     <element xsi:type="archimate:FlowRelationship" id="id-093b7b57fad24ef583427258ac5e56af" source="id-3875f665b2634d6fa17a20e17b7e26f2" target="id-5f192107c9574f1da3f20a1d7fdddcf6"/>
     <element xsi:type="archimate:FlowRelationship" id="id-95355671633b4b34b0423d5e11c304b0" source="id-3875f665b2634d6fa17a20e17b7e26f2" target="id-4342360ad9154175be9ab0a8a558ebc5"/>
     <element xsi:type="archimate:FlowRelationship" id="id-6db1174497e9489bb363fea7c6651d45" source="id-4342360ad9154175be9ab0a8a558ebc5" target="id-3875f665b2634d6fa17a20e17b7e26f2"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f8075283fa204bb4b9000277351e2534" source="id-060ff3e1dd6e4505a491912521578d0c" target="id-5f192107c9574f1da3f20a1d7fdddcf6"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f2c00ae891c44e4ca3f40d90c1ba5b9e" source="id-060ff3e1dd6e4505a491912521578d0c" target="id-d609b137cc8942dea9c914a979256105"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-b87c0602883b4c9b81d7fd3532101cb7" source="id-060ff3e1dd6e4505a491912521578d0c" target="id-1522d20aad6a44e8ac4199cdb2c1db84"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-d3a5d2c207944a239db73e499b216de7" source="id-4561e55cc319423ba64587c3265a07ae" target="id-4342360ad9154175be9ab0a8a558ebc5"/>
   </folder>
   <folder name="Views" id="id-8f8b54a5ea8445a1996c48efa7af5b50" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="FHIR IPS conceptual data model" id="id-31092f1339da4108a52df9ad5f90e146" viewpoint="information_structure">
@@ -617,7 +627,7 @@ Data from CoT MySQL database is transformed with Python CLI transformer is speci
         </child>
       </child>
     </element>
-    <element xsi:type="archimate:ArchimateDiagramModel" name="Personas &amp; Point of Service - chronic" id="id-fa7458052c4f4a6ba086b3d2cd7d1ad2">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Personas &amp; Point of Service" id="id-fa7458052c4f4a6ba086b3d2cd7d1ad2">
       <child xsi:type="archimate:DiagramObject" id="id-a7ee3756e8024c9ab711c4d0d3488d5e" targetConnections="id-1679ca72d2e34f4ba514a49c45f407e5" archimateElement="id-cb40812219e5441e9f20fa451e4e7578">
         <bounds x="132" y="132" width="120" height="55"/>
       </child>
@@ -630,19 +640,19 @@ Data from CoT MySQL database is transformed with Python CLI transformer is speci
       <child xsi:type="archimate:DiagramObject" id="id-f61d498c16c441d6b0d1979b02a17369" targetConnections="id-b56a5c46e0cf48319808cdcfab02b6cb" archimateElement="id-8b2e3148fb9a4ed9b28b93db277b33ac">
         <bounds x="132" y="216" width="120" height="55"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-8476dd2c1775420d8b8fca3bd9781533" targetConnections="id-d03580f700d04b0faf313de1b81d66d9" archimateElement="id-1522d20aad6a44e8ac4199cdb2c1db84">
+      <child xsi:type="archimate:DiagramObject" id="id-8476dd2c1775420d8b8fca3bd9781533" targetConnections="id-d03580f700d04b0faf313de1b81d66d9 id-8c974e5afbe64174a2df690630acc8e5" archimateElement="id-1522d20aad6a44e8ac4199cdb2c1db84">
         <bounds x="396" y="300" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-c069972997f34142af41f97c412a56dc" source="id-8476dd2c1775420d8b8fca3bd9781533" target="id-058686e27d6d40a681decca57729a94e" archimateRelationship="id-8b8ea03d03304ee195a775517e4d3000"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-a3afdec43f1f4c32b806d716fb441188" targetConnections="id-54787cf45e1d4250916c5076e348e6d7 id-71d99162307840fa9efb531367101f56 id-bdde4015ec7a4bd7b7a5611b733940f7" archimateElement="id-4342360ad9154175be9ab0a8a558ebc5">
+      <child xsi:type="archimate:DiagramObject" id="id-a3afdec43f1f4c32b806d716fb441188" targetConnections="id-54787cf45e1d4250916c5076e348e6d7 id-71d99162307840fa9efb531367101f56 id-bdde4015ec7a4bd7b7a5611b733940f7 id-7bc0e1967dad433c985269ebf136bf7a" archimateElement="id-4342360ad9154175be9ab0a8a558ebc5">
         <bounds x="396" y="456" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-dc321b73c7eb4152986e65eb03c7732a" source="id-a3afdec43f1f4c32b806d716fb441188" target="id-c17999359f43480ab2ba7572d58094e7" archimateRelationship="id-d9a880c7f3da40ba913683b43af66d5d"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-81410a1163124505bcbee3edc1d44dc3" targetConnections="id-be6cc9226bf6433192bfe7c38acd0f10" archimateElement="id-5f192107c9574f1da3f20a1d7fdddcf6">
+      <child xsi:type="archimate:DiagramObject" id="id-81410a1163124505bcbee3edc1d44dc3" targetConnections="id-be6cc9226bf6433192bfe7c38acd0f10 id-f62fb7961f2c48bd84c1ef997100b590" archimateElement="id-5f192107c9574f1da3f20a1d7fdddcf6">
         <bounds x="396" y="132" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-1679ca72d2e34f4ba514a49c45f407e5" source="id-81410a1163124505bcbee3edc1d44dc3" target="id-a7ee3756e8024c9ab711c4d0d3488d5e" archimateRelationship="id-6bf9ef3b01884ffdab0e510f9377fedf"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-3033817cc84b43d6a562f01580059233" targetConnections="id-d969cb7dfc7545d9bebe31b1a54d1d94" archimateElement="id-d609b137cc8942dea9c914a979256105">
+      <child xsi:type="archimate:DiagramObject" id="id-3033817cc84b43d6a562f01580059233" targetConnections="id-d969cb7dfc7545d9bebe31b1a54d1d94 id-018853b433bf4256be9e57a462a087cb" archimateElement="id-d609b137cc8942dea9c914a979256105">
         <bounds x="396" y="216" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-b56a5c46e0cf48319808cdcfab02b6cb" source="id-3033817cc84b43d6a562f01580059233" target="id-f61d498c16c441d6b0d1979b02a17369" archimateRelationship="id-08f53f344a8742028abd98366bc3c868"/>
       </child>
@@ -675,8 +685,18 @@ Data from CoT MySQL database is transformed with Python CLI transformer is speci
         <bounds x="696" y="336" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-71d99162307840fa9efb531367101f56" source="id-641a8618c71747dfa3ebc666d1c2bedf" target="id-a3afdec43f1f4c32b806d716fb441188" archimateRelationship="id-d779f687dda8418895df606ad481c2a7"/>
       </child>
+      <child xsi:type="archimate:DiagramObject" id="id-bdfca598201048b29157d8b804034058" archimateElement="id-060ff3e1dd6e4505a491912521578d0c">
+        <bounds x="696" y="204" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-f62fb7961f2c48bd84c1ef997100b590" source="id-bdfca598201048b29157d8b804034058" target="id-81410a1163124505bcbee3edc1d44dc3" archimateRelationship="id-f8075283fa204bb4b9000277351e2534"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-018853b433bf4256be9e57a462a087cb" source="id-bdfca598201048b29157d8b804034058" target="id-3033817cc84b43d6a562f01580059233" archimateRelationship="id-f2c00ae891c44e4ca3f40d90c1ba5b9e"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-8c974e5afbe64174a2df690630acc8e5" source="id-bdfca598201048b29157d8b804034058" target="id-8476dd2c1775420d8b8fca3bd9781533" archimateRelationship="id-b87c0602883b4c9b81d7fd3532101cb7"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-c313eb81095a4270a14a77c980f3f904" archimateElement="id-4561e55cc319423ba64587c3265a07ae">
+        <bounds x="696" y="519" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-7bc0e1967dad433c985269ebf136bf7a" source="id-c313eb81095a4270a14a77c980f3f904" target="id-a3afdec43f1f4c32b806d716fb441188" archimateRelationship="id-d3a5d2c207944a239db73e499b216de7"/>
+      </child>
     </element>
-    <element xsi:type="archimate:ArchimateDiagramModel" name="Personas &amp; Point of Service - generic (copy)" id="id-4eed3132de2948bc8ac8f9665bc12d4c">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Shared Health Record" id="id-4eed3132de2948bc8ac8f9665bc12d4c">
       <child xsi:type="archimate:DiagramObject" id="id-95470e1402f94155ab49fe4d6ca5d117" targetConnections="id-2aeacf0d5e5e437da733c867a48661f9" archimateElement="id-cb40812219e5441e9f20fa451e4e7578">
         <bounds x="180" y="396" width="120" height="55"/>
       </child>
