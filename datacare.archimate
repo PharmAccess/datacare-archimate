@@ -220,7 +220,7 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
     <element xsi:type="archimate:ApplicationComponent" name="Bahmni" id="id-4561e55cc319423ba64587c3265a07ae">
       <documentation>https://www.bahmni.org/</documentation>
     </element>
-    <element xsi:type="archimate:ApplicationComponent" name="OGFR" id="id-bb788dd3d3f1488ab913a83088d4748e"/>
+    <element xsi:type="archimate:ApplicationComponent" name="GOFR" id="id-bb788dd3d3f1488ab913a83088d4748e"/>
     <element xsi:type="archimate:ApplicationComponent" name="OpenCR" id="id-68157d27646a4d408b643ab5ba103d2e">
       <documentation>https://github.com/intrahealth/client-registry</documentation>
     </element>
@@ -252,7 +252,7 @@ https://hapifhir.io/hapi-fhir/docs/security/introduction.html
       <documentation>https://guides.ohie.org/arch-spec/introduction/patient-identity-management-workflows/create-patient-demographic-record-workflow</documentation>
     </element>
     <element xsi:type="archimate:DataObject" name="openHIM database" id="id-2d713afd2bcd4df381b80fe9eed6fc1c"/>
-    <element xsi:type="archimate:ApplicationComponent" name="FHIR Data Pipses" id="id-5236c68dd5af4bee81062f0f638e428a"/>
+    <element xsi:type="archimate:ApplicationComponent" name="FHIR Data Pipes" id="id-5236c68dd5af4bee81062f0f638e428a"/>
     <element xsi:type="archimate:DataObject" name="Bulk FHIR Data" id="id-62bd5b9954ed452bb1f2d669c6508baf"/>
     <element xsi:type="archimate:ApplicationComponent" name="BigQuery" id="id-899681cbf27c478c96f366d0a0f65725"/>
     <element xsi:type="archimate:ApplicationService" name="Analytics Workbench" id="id-c74189f4a62a4f08b516640f49f33228"/>
