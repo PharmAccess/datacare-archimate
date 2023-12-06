@@ -2,7 +2,7 @@
 <html class="frame" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<title>FHIR Data Pipes</title>
+	<title>FHIR Gateway</title>
 
 	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
 	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
@@ -21,7 +21,7 @@
 
 		<div class="panel-heading root-panel-heading">
             <!-- Name -->
-               <b>FHIR Data Pipes</b>
+               <b>FHIR Gateway</b>
 
             <!-- If a View with Viewpoint -->
 			   (<span class="i18n-elementtype-ApplicationComponent"></span>)
@@ -45,8 +45,11 @@
 				<!-- Tab panes -->
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active" id="documentation">
-						<div class="convertlinks documentation" style="white-space:pre-wrap">https://github.com/google/fhir-data-pipes
-</div>
+						<div class="convertlinks documentation" style="white-space:pre-wrap">FHIR Information Gateway is a simple access-control proxy that sits in front of a FHIR store (e.g., a HAPI FHIR server, GCP FHIR store, etc.) and controls access to FHIR resources.
+
+Note: "gateway" and "proxy" are used interchangably here, as the gateway is implemented as a proxy server.
+
+The authorization and access-control have three components; one of them is this access proxy. The other two are an Identity Provider (IDP) and an Authorization server (AuthZ). The responsibility of this pair is to authenticate the user and issue access tokens (in JWT format and using authorization flow of OAuth 2.0). The requests to the access proxy should have the access token as a Bearer Authorization header. Based on that, the proxy decides whether to grant access for a FHIR query.</div>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="properties">
 						<table class="table table-striped table-hover table-condensed">
